@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/disclaimer', function () {
     return view('disclaimer');
 })->name('disclaimer');
+
+Route::get('/consultation', function () {
+    return view('leading');
+})->name('cta');

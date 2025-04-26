@@ -10,7 +10,7 @@
                 <li><i class="fa-solid fa-circle-check text-green-600"></i> Debt Relief</li>
                 <li><i class="fa-solid fa-circle-check text-green-600"></i> Student Loan Consolidation</li>
             </ul>
-            <a class="btn-solid-lg" href="#your-link">Book A Free Consultation</a>
+            <a class="btn-solid-lg" href="{{ route('cta') }}">Book A Free Consultation</a>
         </div>
         <div class="xl:text-right md:block hidden">
             <img class="inline" src="images/header-smartphone.png" alt="alternative" />

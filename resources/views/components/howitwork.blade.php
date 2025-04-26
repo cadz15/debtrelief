@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="flex justify-center mt-30 md:mt-20">
-          <a class="flex mx-auto btn-solid-lg" href="#your-link">Book A Free Consultation</a>
+          <a class="flex mx-auto btn-solid-lg" href="{{ route('cta') }}">Book A Free Consultation</a>
       </div>
     </div>
   </section>

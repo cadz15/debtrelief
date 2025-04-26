@@ -337,7 +337,7 @@ select {
     border: 1px solid #a1a1a1;
 }
 
-.checkbox {
+/* .checkbox {
     font-size: 0.75rem;
     line-height: 1.25rem;
 }
@@ -345,7 +345,7 @@ select {
 input[type="checkbox"] {
     vertical-align: -10%;
     margin-right: 0.5rem;
-}
+} */
 
 .form-control-submit-button {
     display: inline-block;

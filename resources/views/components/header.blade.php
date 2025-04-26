@@ -15,7 +15,8 @@
       </button>
 
       <div class="navbar-collapse offcanvas-collapse lg:flex lg:flex-grow lg:items-center" id="navbarsExampleDefault">
-          <ul class="pl-0 mt-3 mb-2 ml-auto flex flex-col list-none lg:mt-0 lg:mb-0 lg:flex-row">
+        <ul class="pl-0 mt-3 mb-2 ml-auto flex flex-col list-none lg:mt-0 lg:mb-0 lg:flex-row">
+            @if(!request()->routeIs('cta'))
               <li>
                 @if(request()->routeIs('home'))
                     <a class="nav-link page-scroll" href="#header">How It Works</a>
@@ -45,9 +46,10 @@
                 @endif
               </li>
               
+              @endif
           </ul>
           <span class="block lg:ml-3.5">
-              <a class="no-underline" href="#your-link">
+              <a class="no-underline" href="{{ route('cta') }}">
                   <button class="btn-outline-reg" type="button"><span>08-000-0011</span> </button>
               </a>
           </span>
