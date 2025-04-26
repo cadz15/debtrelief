@@ -1,79 +1,50 @@
 <!-- Features -->
-<div id="features" class="cards-1">
-            <div class="container px-4 sm:px-8 xl:px-4">
+<div id="whyus">
+    <div class="container my-24 mb-24">
 
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/features-icon-1.svg" alt="alternative" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Platform Integration</h5>
-                        <p class="mb-4">You sales force can use the app on any smartphone platform without compatibility issues</p>
-                    </div>
+        <div class="text-center mb-20 mt-8">
+            <h1 class="sm:text-xl text-xl font-medium title-font text-gray-900">OUR VALUES</h1>
+            <div class="flex justify-center">
+                <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
                 </div>
-                <!-- end of card -->
+    
+            <h1 class=" text-9xlfont-bold title-font text-gray-900 mt-10 mb-4">Why Choose Debt Cure?</h1>
+            
+        </div>
 
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/features-icon-2.svg" alt="alternative" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Easy On Resources</h5>
-                        <p class="mb-4">Works smoothly even on older generation hardware due to our optimization efforts</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/features-icon-3.svg" alt="alternative" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Great Performance</h5>
-                        <p class="mb-4">Optimized code and innovative technology insure no delays and ultra-fast responsiveness</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/features-icon-4.svg" alt="alternative" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Multiple Languages</h5>
-                        <p class="mb-4">Choose from one of the 40 languages that come pre-installed and start selling smarter</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/features-icon-5.svg" alt="alternative" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Free Updates</h5>
-                        <p class="mb-4">Don't worry about future costs, pay once and receive all future updates at no extra cost</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/features-icon-6.svg" alt="alternative" />
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Community Support</h5>
-                        <p class="mb-4">Register the app and get acces to knowledge and ideas from the Pavo online community</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-            </div> <!-- end of container -->
-        </div> <!-- end of cards-1 -->
-        <!-- end of features -->
+        <div class="grid grid-cols-1 md:grid-cols-2  gap-4">
+            <div class="w-full flex flex-col py-12 gap-y-4 text-center justify-center items-center bg-gray" rounded-lg>
+                <img class="w-20 h-20" src="images/features-icon-1.svg" alt="alternative" />
+                <h5>Experience</h5>
+                <p class="px-8">
+                    With years of experience in the debt relief industry, we have helped countless individuals and families achieve debt freedom.
+                </p>
+            </div>
+            <div class="w-full flex flex-col py-12 gap-y-4 text-center justify-center items-center bg-gray rounded-lg">
+                <img class="w-20 h-20" src="images/features-icon-4.svg" alt="alternative" />
+                <h5>Customized Solutions</h5>
+                <p class="px-8">
+                    We understand that every financial situation is unique. Our solutions are tailored to fit your specific needs and goals.
+                </p>
+            </div>
+            <div class="w-full flex flex-col py-12 gap-y-4 text-center justify-center items-center bg-gray rounded-lg">
+                <img class="w-20 h-20" src="images/features-icon-2.svg" alt="alternative" />
+                <h5>Transparency</h5>
+                <p class="px-8">
+                    We believe in transparency in all our interactions. You will always know what to expect and how our services can benefit you.
+                </p>
+            </div>
+            <div class="w-full flex flex-col py-12 gap-y-4 text-center justify-center items-center bg-gray rounded-lg">
+                <img class="w-20 h-20" src="images/features-icon-6.svg" alt="alternative" />
+                <h5>Compasionate Support</h5>
+                <p class="px-8">
+                    We prioritize your peace of mind. Our tema provides compassionate suppert throughout your journey to financial recovery.
+                </p>
+            </div>
+        </div>
+        <div class="flex justify-center mt-30 md:mt-20">
+            <a class="flex mx-auto btn-solid-lg" href="#your-link">Book A Free Consultation</a>
+        </div>
+    </div> <!-- end of container -->
+</div> <!-- end of cards-1 -->
+<!-- end of features -->
