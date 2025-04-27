@@ -44,6 +44,7 @@
 
 
 <!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://themewagon.github.io/pavo/js/swiper.min.js" ></script>
 
 @yield('scripts')

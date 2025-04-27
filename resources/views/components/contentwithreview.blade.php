@@ -1,11 +1,11 @@
 <div class="bg-gray py-16">
     <div class="container flex">
-        <div class="hidden md:w-4/12 md:block">
+        <div class="hidden md:w-4/12 md:block" data-aos="fade-up-right">
             <div class="xl:text-right md:block hidden">
                 <img class="inline" src="images/header-smartphone.png" alt="alternative" />
             </div>
         </div>
-        <div class="w-full md:w-8/12 md:pl-14">
+        <div class="w-full md:w-8/12 md:pl-14" data-aos="fade-up-left">
             <div class="text-center md:text-left ">
                 <h2 class="text-3xl font-extrabold text-gray-900 sm:text-5xl">
                     We change lives. Debt resolution made simple.

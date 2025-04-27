@@ -31,13 +31,13 @@
                 <a class="nav-link page-scroll" href="{{ route('home') }}#whyus">Why Choose Us</a>
                 @endif
               </li>
-              {{-- <li>
+              <li>
                 @if(request()->routeIs('home'))
-                <a class="nav-link page-scroll" href="#details">Contact</a>
+                <a class="nav-link page-scroll" href="#testimonials">Reviews</a>
                 @else
-                <a class="nav-link page-scroll" href="{{ route('home') }}#details">Contact</a>
+                <a class="nav-link page-scroll" href="{{ route('home') }}#testimonials">Reviews</a>
                 @endif
-              </li> --}}
+              </li>
               <li>
                 @if(request()->routeIs('home'))
                 <a class="nav-link page-scroll" href="#faq">FAQ's</a>

@@ -1,8 +1,8 @@
 <!-- Testimonials -->
-<div class="slider-1 py-32 pt-24 bg-gray">
+<div class="slider-1 py-32 pt-24 bg-gray" id="testimonials">
     <div class="container px-4 sm:px-8">
         <div class="text-center mb-20">
-            <h1 class="sm:text-xl text-xl font-medium title-font text-gray-900">CLIENT FEEDBACK</h1>
+            <span class="sm:text-xl text-xl font-medium title-font text-gray-900">CLIENT FEEDBACK</span>
             <div class="flex justify-center">
                 <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
             </div>

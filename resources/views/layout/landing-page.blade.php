@@ -33,6 +33,8 @@
         'resources/js/jquery.easing.min.js',  'resources/js/app.js',
         'resources/js/jquery.magnific-popup.js', 'resources/js/scripts.js'])
 
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
         <!-- Favicon  -->
         <link rel="icon" href="images/favicon.png" />

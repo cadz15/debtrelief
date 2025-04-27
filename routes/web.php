@@ -21,6 +21,7 @@ Route::get('/disclaimer', function () {
     return view('disclaimer');
 })->name('disclaimer');
 
-Route::get('/consultation', function () {
-    return view('leading');
-})->name('cta');
+Route::group(['prefix' => 'consultation'], function () {
+    Route::get('/', [\App\Http\Controllers\LeadingController::class, 'index'])->name('cta');
+    Route::post('/', [\App\Http\Controllers\LeadingController::class, 'store'])->name('cta.store');
+});
