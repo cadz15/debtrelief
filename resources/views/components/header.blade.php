@@ -7,7 +7,7 @@
 
       <!-- Image Logo -->
       <a class="inline-block mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline" href="{{ route('home') }}">
-          <img src="https://www.reviewcounsel.org/wp-content/uploads/2023/03/citizens-debt-relief.svg" alt="alternative" class="h-8" />
+          <img src="{{ asset($_siteSettings['logo']) }}" alt="{{ $_siteSettings['site_name'] }}" class="h-8" />
       </a>
 
       <button class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400" type="button" data-toggle="offcanvas">
@@ -49,8 +49,8 @@
               @endif
           </ul>
           <span class="block lg:ml-3.5">
-              <a class="no-underline" href="{{ route('cta') }}">
-                  <button class="btn-outline-reg" type="button"><span>08-000-0011</span> </button>
+              <a class="no-underline" href="#">
+                  <button class="btn-outline-reg" type="button"><span>{{ $_siteSettings['phone'] }}</span> </button>
               </a>
           </span>
       </div> <!-- end of navbar-collapse -->

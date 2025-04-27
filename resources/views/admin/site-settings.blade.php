@@ -15,34 +15,35 @@
                 </div>
             
                 <div class="mt-6 mb-6 flex gap-4 flex-col">
-                    <form class="flex flex-col gap-6" action="" method="POST">
+                    <form class="flex flex-col gap-6" action="{{ route('admin.site-settings.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div>
                             <label for="site_name" class="block text-sm font-medium text-gray-700">Site Name</label>
                             <input type="text" name="site_name" id="site_name"  required
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-                            placeholder="Ex. Debt Relief" value="{{ old('site_name') }}">
+                            placeholder="Ex. Debt Relief" value="{{ $siteSettings->site_name }}">
                             @error('site_name')
                                 <span class="text-red-500 text-sm">{{ $message }}</span>
                             @enderror
                         </div>
 
                         <div>
-                            <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-                            <textarea type="text" name="description" id="description"  required rows="4"
+                            <label for="site_description" class="block text-sm font-medium text-gray-700">Site Description (for better SEO)</label>
+                            <textarea type="text" name="site_description" id="site_description"  required rows="4"
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-                            placeholder="Ex. Debt Relief Description">{{ old('description') }}</textarea>
-                            @error('description')
+                            placeholder="Ex. Debt Relief Site Description">{{ $siteSettings->site_description }}</textarea>
+                            @error('site_description')
                                 <span class="text-red-500 text-sm">{{ $message }}</span>
                             @enderror
                         </div>
 
                         <div>
-                            <label for="phone_number" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                            <input type="text" name="phone_number" id="phone_number"  required
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="text" name="phone" id="phone"  required
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-                            placeholder="Ex. (123) 123-1234" value="{{ old('phone_number') }}">
-                            @error('phone_number')
+                            placeholder="Ex. (123) 123-1234" value="{{ $siteSettings->phone }}">
+                            @error('phone')
                                 <span class="text-red-500 text-sm">{{ $message }}</span>
                             @enderror
                         </div>
@@ -52,13 +53,14 @@
                                 <label for="logo" class="block text-sm font-medium text-gray-700">Logo</label>
                                 <input type="file"
                                 class="w-full text-slate-500 font-medium text-sm bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 
-                                file:py-2 file:px-4 file:mr-4 file:bg-gray-800 file:hover:bg-gray-700 file:text-white rounded" />
+                                file:py-2 file:px-4 file:mr-4 file:bg-gray-800 file:hover:bg-gray-700 file:text-white rounded"
+                                name="logo" id="logo"/>
                                 <span class="text-gray-500 text-sm">PNG, JPEG with max file size of 2mb</span>
                             </div>
     
                             <div class="w-1/2 sm:w-full">
                                 <label for="favicon" class="block text-sm font-medium text-gray-700">Logo Preview</label>
-                                <img src="{{ asset('images/favicon.png') }}" alt="Favicon" class="w-20 h-20 mb-2">
+                                <img src="{{ asset($siteSettings->logo) }}" alt="Favicon" class="w-20 h-20 mb-2">
                             </div>
                         </div>
 

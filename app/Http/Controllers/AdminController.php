@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,7 +14,17 @@ class AdminController extends Controller
 
     public function siteSettings()
     {
-        return view('admin.site-settings');
+        $siteSettings = SiteSetting::first();
+        if (!$siteSettings) {
+            // If no settings exist, create a default one
+            $siteSettings = SiteSetting::create([
+                'site_name' => 'Default Site Name',
+                'phone' => '(123) 456-7890',
+                'site_description' => 'Default description for the site.',
+                'logo' => null,
+            ]);
+        }
+        return view('admin.site-settings', compact('siteSettings'));
     }
 
     public function updateSiteSettings(Request $request)
@@ -21,18 +32,35 @@ class AdminController extends Controller
         // Validate and update site settings
         $validatedData = $request->validate([
             'site_name' => 'required|string|max:255',
-            'phone_number' => [
+            'phone' => [
                 'required',
                 'string',
                 'regex:/^\(\d{3}\) \d{3}-\d{4}$/', // Regular expression to match the phone number format (XXX) XXX-XXXX
                 'min:10',
             ],
-            'description' => 'required|string|max:1000',
+            'site_description' => 'required|string|max:1000',
+            'logo' => 'sometimes|mimes:jpg,png,pdf|max:2048'
         ]);
 
-        // Assuming you have a SiteSettings model to handle the settings
-        SiteSettings::updateOrCreate(['id' => 1], $validatedData);
+       
+        SiteSetting::first()->update([
+            'site_name' => $validatedData['site_name'],
+            'phone' => $validatedData['phone'],
+            'site_description' => $validatedData['site_description'],
+        ]);
+
+        if ($request->hasFile('logo')) {
+            $image = $request->file('logo');
+            $fileName ='site-logo.' . $image->getClientOriginalExtension();
+
+            $image->storeAs('uploads', $fileName, 'public');
+
+            SiteSetting::first()->update(['logo' => 'storage/uploads/' . $fileName]);
+        }
 
         return redirect()->back()->with('success', 'Site settings updated successfully.');
     }
+
+
+    
 }

@@ -15,7 +15,7 @@
             <li class="mb-2"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
             @endif
         </ul>
-        <span class="pb-2 p-small font-semibold statement">Copyright © <a href="" class="no-underline">Your name</a></span>
+        <span class="pb-2 p-small font-semibold statement">Copyright © <a href="" class="no-underline">{{ $_siteSettings['site_name'] }}</a></span>
 
     </div> 
 

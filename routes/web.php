@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LeadController;
+use App\Models\Lead;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +28,8 @@ Route::get('/disclaimer', function () {
 })->name('disclaimer');
 
 Route::group(['prefix' => 'consultation'], function () {
-    Route::get('/', [\App\Http\Controllers\LeadingController::class, 'index'])->name('cta');
-    Route::post('/', [\App\Http\Controllers\LeadingController::class, 'store'])->name('cta.store');
+    Route::get('/', [\App\Http\Controllers\LeadController::class, 'index'])->name('cta');
+    Route::post('/', [\App\Http\Controllers\LeadController::class, 'store'])->name('cta.store');
 });
 
 
@@ -42,7 +44,10 @@ Route::group(['prefix' => '/admin'], function () {
     Route::delete('/accounts/delete/{id}', [AccountController::class, 'destroyAccount'])->name('admin.accounts.delete');
 
     Route::get('/site-settings', [AdminController::class, 'siteSettings'])->name('admin.site-settings');
+    Route::put('/site-settings/update', [AdminController::class, 'updateSiteSettings'])->name('admin.site-settings.update');
 
+    Route::get('/leads', [LeadController::class, 'leads'])->name('admin.leads');
+    Route::post('/leads', [LeadController::class, 'list'])->name('admin.leads.list');
 
     Route::get('admin/#faq', function () {
         return view('admin.admin');

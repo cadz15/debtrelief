@@ -362,11 +362,11 @@
 
        <li>
          <a
-           href="{{ route('admin.dashboard') }}"
-           class="menu-item group @if(request()->routeIs('admin.dashboard')) menu-item-active @else menu-item-inactive @endif"
+           href="{{ route('admin.leads') }}"
+           class="menu-item group @if(request()->routeIs('admin.leads')) menu-item-active @else menu-item-inactive @endif"
          >
            <img
-             class="@if(request()->routeIs('admin.dashboard')) menu-item-active @else menu-item-inactive @endif"
+             class="@if(request()->routeIs('admin.leads')) menu-item-active @else menu-item-inactive @endif"
              width="22"
              height="22"
              src= "https://www.svgrepo.com/show/446101/user-data.svg"

@@ -8,4 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class SiteSetting extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'site_name',
+        'phone',
+        'site_description',
+        'logo',
+    ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
+    public function getLogoUrlAttribute()
+    {
+        return $this->logo ? asset($this->logo) : null;
+    }
 }

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('leadings', function (Blueprint $table) {
+        Schema::create('leads', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
@@ -23,6 +23,7 @@ return new class extends Migration
             $table->json('debts');
             $table->string('home_status');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('leadings');
+        Schema::dropIfExists('leads');
     }
 };
