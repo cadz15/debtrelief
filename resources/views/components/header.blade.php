@@ -6,8 +6,9 @@
       <!-- <a class="text-gray-800 font-semibold text-3xl leading-4 no-underline page-scroll" href="index.html">Pavo</a> -->
 
       <!-- Image Logo -->
-      <a class="inline-block mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline" href="{{ route('home') }}">
+      <a class="flex items-center gap-x-2 mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline" href="{{ route('home') }}">
           <img src="{{ asset($_siteSettings['logo']) }}" alt="{{ $_siteSettings['site_name'] }}" class="h-8" />
+          <span>{{ $_siteSettings['site_name'] }}</span>
       </a>
 
       <button class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400" type="button" data-toggle="offcanvas">

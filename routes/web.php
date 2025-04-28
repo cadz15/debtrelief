@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\SiteContentController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +40,7 @@ Route::group(['prefix' => 'consultation'], function () {
 });
 
 
-Route::group(['prefix' => '/admin'], function () {
+Route::group(['prefix' => '/admin', 'middleware' => ['auth']], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/accounts', [AccountController::class, 'accounts'])->name('admin.accounts');
     Route::post('/accounts', [AccountController::class, 'accountList'])->name('admin.accounts.list');
@@ -70,3 +71,9 @@ Route::group(['prefix' => '/admin'], function () {
         return view('admin.admin');
     })->name('admin.testimonial');
 });
+
+Auth::routes([
+    'register' => false,    // Disable registration routes
+    'reset' => false,      // Disable password reset routes
+    'verify' => false,     // Disable email verification routes
+]);

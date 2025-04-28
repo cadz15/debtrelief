@@ -34,17 +34,17 @@ class SiteContentController extends Controller
         if ($siteContent) {
             $siteContent->update([
                 'content_text' => $validatedData['disclaimer'],
-                'content' => [
+                'content' => json_encode([
                     'data' => $validatedData['disclaimer_html']
-                ],
+                ]),
             ]);
         } else {
             SiteContent::create([
                 'page_type' => 'disclaimer',
                 'content_text' => $validatedData['disclaimer'],
-                'content' => [
+                'content' => json_encode([
                     'data' => $validatedData['disclaimer_html']
-                ]
+                ])
             ]);
         }
 

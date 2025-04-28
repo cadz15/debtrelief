@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\DataTables;
 
 class AccountController extends Controller
@@ -59,7 +60,7 @@ class AccountController extends Controller
         User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
-            'password' => bcrypt($validatedData['password']),
+            'password' => Hash::make($validatedData['password']),
         ]);
 
         return redirect()->route('admin.accounts')->with('success', 'Account created successfully.');
@@ -77,7 +78,7 @@ class AccountController extends Controller
         $account->name = $validatedData['name'];
         $account->email = $validatedData['email'];
         if ($request->filled('password')) {
-            $account->password = bcrypt($validatedData['password']);
+            $account->password = Hash::make($validatedData['password']);
         }
         $account->save();
 
