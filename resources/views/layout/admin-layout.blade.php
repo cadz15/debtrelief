@@ -11,8 +11,7 @@
     <title>@yield('title', 'Debt Relief')</title>
     
     <link rel="icon" href="favicon.ico">
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
+    @vite(['resources/css/admin.css' , 'resources/css/app.css', 'resources/js/admin.js'])
 
     @yield('styles')
   </head>
@@ -65,6 +64,5 @@
     </div>
 
     @yield('scripts')
-    <script src="{{ asset('resources/js/admin.js') }}"></script>
   </body>
 </html>

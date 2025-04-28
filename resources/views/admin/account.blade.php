@@ -46,8 +46,6 @@
 
 <!-- DataTables CSS -->
 <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet"/>
-<link href="{{ asset('css/datatable.buttons.css') }}" rel="stylesheet"/>
-
 
 @vite('resources/css/datatable.buttons.css')
 
