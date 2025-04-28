@@ -27,12 +27,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
         <link href="https://themewagon.github.io/pavo/css/fontawesome-all.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        @vite(['resources/css/app.css', 'resources/css/styles.css', 
-        'resources/css/magnific-popup.css', 'resources/css/swiper.css', 
-        'resources/css/magnific-popup.css', 'resources/js/jquery.min.js',
-        'resources/js/jquery.easing.min.js',  'resources/js/app.js',
-        'resources/js/jquery.magnific-popup.js', 'resources/js/scripts.js'])
-
+        
+        <link href="asset('css/app.css')" rel="stylesheet">
+        <link href="asset('css/styles.css')" rel="stylesheet">
+        <link href="asset('css/magnific-popup.css')" rel="stylesheet">
+        <link href="asset('css/swiper.css')" rel="stylesheet">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
@@ -48,5 +47,9 @@
        @yield('content')
 
 
-
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/easing.min.js') }}"></script>
+    <script src="{{ asset('js/magnific-popup.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
 @include('components.footer')
