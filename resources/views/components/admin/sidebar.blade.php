@@ -283,11 +283,11 @@
        
        <li>
          <a
-           href="{{ route('admin.dashboard') }}"
-           class="menu-item group @if(request()->routeIs('admin.dashboard')) menu-item-active @else menu-item-inactive @endif"
+           href="{{ route('admin.consultation') }}"
+           class="menu-item group @if(request()->routeIs('admin.consultation')) menu-item-active @else menu-item-inactive @endif"
          >
            <img
-             class="@if(request()->routeIs('admin.dashboard')) menu-item-active @else menu-item-inactive @endif"
+             class="@if(request()->routeIs('admin.consultation')) menu-item-active @else menu-item-inactive @endif"
              width="22"
              height="22"
              src= "https://www.svgrepo.com/show/6753/analytic-report.svg"
@@ -307,11 +307,11 @@
        
        <li>
          <a
-           href="{{ route('admin.dashboard') }}"
-           class="menu-item group @if(request()->routeIs('admin.dashboard')) menu-item-active @else menu-item-inactive @endif"
+           href="{{ route('admin.disclaimer') }}"
+           class="menu-item group @if(request()->routeIs('admin.disclaimer')) menu-item-active @else menu-item-inactive @endif"
          >
            <img
-             class="@if(request()->routeIs('admin.dashboard')) menu-item-active @else menu-item-inactive @endif"
+             class="@if(request()->routeIs('admin.disclaimer')) menu-item-active @else menu-item-inactive @endif"
              width="22"
              height="22"
              src= "https://www.svgrepo.com/show/153772/signing-the-contract.svg"

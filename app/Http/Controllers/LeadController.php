@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDebtReliefSubmissionRequest;
 use App\Models\Lead;
+use App\Models\SiteContent;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
@@ -13,7 +14,30 @@ class LeadController extends Controller
     //
     public function index()
     {
-        return view('leading');
+        $siteContent = SiteContent::where('page_type', 'disclaimer')->first();
+        if ($siteContent) {
+            $disclaimer = json_decode($siteContent->content)->data ?? '';
+        } else {
+            $disclaimer = '';
+        }
+
+        $consultationContent = SiteContent::where('page_type', 'consultation-hero')->first();
+        
+        if ($consultationContent) {
+            $consultationData = json_decode($consultationContent->content);
+        }else {
+            $consultationData = null;
+        }
+
+        $formConsulationData = SiteContent::where('page_type', 'consultation-form')->first();
+        
+        if ($formConsulationData) {
+            $formData = json_decode($formConsulationData->content);
+        }else {
+            $formData = null;
+        }
+        
+        return view('leading' , compact('disclaimer', 'consultationData', 'formData'));
     }
 
     public function leads()

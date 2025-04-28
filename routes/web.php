@@ -3,7 +3,7 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LeadController;
-use App\Models\Lead;
+use App\Http\Controllers\SiteContentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +24,13 @@ Route::get('/', function () {
 
 
 Route::get('/disclaimer', function () {
-    return view('disclaimer');
+    $siteContent = \App\Models\SiteContent::where('page_type', 'disclaimer')->first();
+    if ($siteContent) {
+        $disclaimer = json_decode($siteContent->content)->data ?? '';
+    } else {
+        $disclaimer = '';
+    }
+    return view('disclaimer', compact('disclaimer'));
 })->name('disclaimer');
 
 Route::group(['prefix' => 'consultation'], function () {
@@ -48,6 +54,13 @@ Route::group(['prefix' => '/admin'], function () {
 
     Route::get('/leads', [LeadController::class, 'leads'])->name('admin.leads');
     Route::post('/leads', [LeadController::class, 'list'])->name('admin.leads.list');
+
+    Route::get('/disclaimer', [SiteContentController::class, 'disclaimer'])->name('admin.disclaimer');
+    Route::post('/disclaimer', [SiteContentController::class, 'updateDisclaimer'])->name('admin.disclaimer.update');
+
+    Route::get('/consultation', [SiteContentController::class, 'consultation'])->name('admin.consultation');
+    Route::post('/consultation/left-section', [SiteContentController::class, 'updateConsultationHeroSection'])->name('admin.consultation.left.update');
+    Route::post('/consultation/form-section', [SiteContentController::class, 'updateConsultationFormSection'])->name('admin.consultation.form.update');
 
     Route::get('admin/#faq', function () {
         return view('admin.admin');

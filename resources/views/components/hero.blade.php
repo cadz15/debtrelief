@@ -13,7 +13,7 @@
             <a class="btn-solid-lg" href="{{ route('cta') }}">Book A Free Consultation</a>
         </div>
         <div class="xl:text-right md:block hidden" data-aos="fade-left">
-            <img class="inline" src="images/header-smartphone.png" alt="alternative" />
+            <img class="inline" src="https://academy.moralis.io/wp-content/uploads/2022/02/web3Developer.png" alt="alternative" />
         </div>
     </div> <!-- end of container -->
 </header> <!-- end of header -->

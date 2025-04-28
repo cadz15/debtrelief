@@ -4,16 +4,19 @@
 
 @section('content')
 
-<header  class="header mt-12 md:mt-1 py-12 mb:py-28 text-center md:pt-36 lg:text-left xl:pt-44 xl:pb-20">
+<header  class="header mt-12 md:mt-1 py-12 mb:py-28 text-center md:pt-36 lg:text-left xl:pb-20">
     <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
-        <div class="mb-4 md:mb-16 lg:mt-20 xl:mt-30 xl:mr-12">
-            <h1 class="h1-large mb-5">Be debt-free and take back control of your life.</h1>
-            <p class="p-large mb-4">We at Debt Relief are prepared to assist. Regardless of your debt level, financial freedom is possible!</p>
+        <div class="mb-4 md:mb-16 lg:mt-20 xl:mr-12">
+            <h1 class="h1-large mb-5">{{ $consultationData?->section_title ?? '' }}</h1>
+            <p class="p-large mb-4">{{ $consultationData?->section_description ?? '' }}</p>
             <ul class="list-none mb-8">
-                <li><i class="fa-solid fa-circle-check text-green-600"></i> Credit Counseling</li>
-                <li><i class="fa-solid fa-circle-check text-green-600"></i> Debt Consolidation</li>
-                <li><i class="fa-solid fa-circle-check text-green-600"></i> Debt Relief</li>
-                <li><i class="fa-solid fa-circle-check text-green-600"></i> Student Loan Consolidation</li>
+                @php
+                    $bullets = $consultationData?->hero_bullets ?? [];
+                @endphp
+
+                @foreach ($bullets as $index => $bullet)
+                    <li><i class="fa-solid fa-circle-check text-green-600"></i> {{ $bullet }}</li>
+                @endforeach
             </ul>
         </div>
         <div class="">
@@ -23,7 +26,7 @@
             </style>
         
             <div class="mx-auto mt-10 p-5 px-8 bg-white shadow-md rounded-lg">
-                <h1 class="text-2xl font-bold text-center mb-5">Get Debt Relief Help</h1>
+                <h1 class="text-2xl font-bold text-center mb-5">{{ $formData?->form_header ?? '' }}</h1>
                 <form method="POST" action="{{ route('cta.store') }}">
                     @csrf
                     <!-- Step 1 -->
@@ -196,20 +199,15 @@
                         </div>
                         <div  class="gap-2 items-center flex mt-12">
                             {{-- <input class="checkbox checkbox-primary checkbox-sm" type="checkbox" name="debts[]" value="Other Debts" id="confirm"> --}}
-                            <label for="confirm" class="text-sm font-normal text-gray-500">By clicking “Submit”, you agree that the phone number and email address you are providing may be used to contact you by Debt Cure (including auto-dialed/auto-selected and prerecorded calls, as well as text/SMS messages). Msg. and data rates apply, and your consent to such contact/marketing is not required for purchase. We may also e-mail you and you may let us know at any time if you are no longer interested in hearing from us via a particular communication platform.</label>
+                            <label for="confirm" class="text-sm font-normal text-gray-500">{{ $formData?->term_disclaimer ?? ''  }}</label>
                         </div>
                     </div>
 
                     @if(Session::has('success'))
-                        <div class="step active transition-all" data-step="5">
-                            <span class="text-xl text-center text-blue-900 font-bold mb-3">You're All Set! 🎉</span>
-                            <div class="space-y-4 mt-8 mx-4 mb-8 text-center">
-                                <p class="text-lg text-gray-700">Thank you for reaching out! 🙏</p>
-                                <p class="text-md text-gray-600">We've received your information, and you're now a priority for us. Our team is reviewing your request and will get in touch with you shortly to assist you in your journey to debt relief.</p>
-                                <p class="text-md text-gray-600 font-semibold">Please know that we're here to help you, and your request is very important to us. 💙</p>
-                                <div class="mt-5 w-1/2 mx-auto">
-                                    <button type="button" class="btn btn-primary rounded-3xl w-full" disabled>We're On It! ⏳</button>
-                                </div>
+                        <div class="step active transition-all " data-step="5">
+                            <div class="flex flex-col gap-y-2">
+
+                                {!! $formData?->complete_message ?? '' !!}
                             </div>
                         </div>
                     @endif
