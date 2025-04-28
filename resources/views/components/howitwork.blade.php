@@ -16,7 +16,7 @@
               </div>
           <div class="flex-grow">
             <span class="text-gray-900 text-xl title-font font-bold mb-3">Submit your info</span>
-            <p class="font-medium w-11/12">When you contact Debt Cure, we start by understanding your current financial circumstances. This includes reviewing your debts, income, expenses, and financial goals.</p>
+            <p class="font-medium w-11/12">When you contact FCA National Service, we start by understanding your current financial circumstances. This includes reviewing your debts, income, expenses, and financial goals.</p>
           </div>
         </div>
         <div class="p-4 md:w-1/3 flex flex-col gap-y-6 text-center items-center" data-aos="zoom-in-up">

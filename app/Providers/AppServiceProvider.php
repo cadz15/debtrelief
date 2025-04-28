@@ -19,9 +19,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $siteSettings = \App\Models\SiteSetting::first()->toArray();
+        $siteSettings = \App\Models\SiteSetting::first();
 
-        if(empty($siteSettings)) {
+        if(!$siteSettings) {
             // If no settings exist, create a default one
             $siteSettings = [
                 'site_name' => 'Site Name',
@@ -29,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
                 'site_description' => 'Default description for the site.',
                 'logo' => null,
             ];
+        }else {
+            $siteSettings = $siteSettings->toArray();
         }
 
         view()->share('_siteSettings', $siteSettings);
