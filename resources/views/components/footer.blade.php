@@ -9,14 +9,17 @@
 
 <!-- Copyright -->
 <div class="copyright">
-    <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-3">
+    <div class="container px-4 sm:px-8 flex md:flex-row flex-col justify-between ">
         <ul class="mb-4 list-unstyled p-small">
             @if(!request()->routeIs('cta'))
             <li class="mb-2"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
             @endif
         </ul>
         <span class="pb-2 p-small font-semibold statement">Copyright © <a href="" class="no-underline">{{ $_siteSettings['site_name'] }}</a></span>
-
+        <ul class="mb-4 list-unstyled p-small flex">
+            <li class="mb-2"><span><i class="fa-solid fa-phone"></i> {{ $_siteSettings['phone'] }}</span></li>
+            <li class="mb-2"><span><i class="fa-solid fa-location-dot"></i> 3702 W Spruce St. #1211 Tampa, FL 33607 United States</span></li>
+        </ul>
     </div> 
 
 
