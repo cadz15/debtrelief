@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Illuminate\Foundation\Vite;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,7 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Vite::createAssetPathsUsing(fn (string $path) => "/$path");
         $siteSettings = \App\Models\SiteSetting::first();
 
         if(!$siteSettings) {
