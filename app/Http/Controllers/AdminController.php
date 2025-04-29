@@ -53,9 +53,9 @@ class AdminController extends Controller
             $image = $request->file('logo');
             $fileName ='site-logo.' . $image->getClientOriginalExtension();
 
-            $image->storeAs('uploads', $fileName, 'public');
+            $image->move(public_path('uploads'), $fileName);
 
-            SiteSetting::first()->update(['logo' => 'storage/uploads/' . $fileName]);
+            SiteSetting::first()->update(['logo' => 'uploads/' . $fileName]);
         }
 
         return redirect()->back()->with('success', 'Site settings updated successfully.');
