@@ -14,7 +14,7 @@
         <meta property="og:site" content="" /> <!-- website link -->
         <meta property="og:title" content="{{ $_siteSettings['site_name'] }}" /> <!-- title shown in the actual shared post -->
         <meta property="og:description" content="{{ $_siteSettings['site_description'] }}" /> <!-- description shown in the actual shared post -->
-        <meta property="og:image" content="{{ asset($_siteSettings['logo']) }}" /> <!-- image link, make sure it's jpg -->
+        <meta property="og:image" content="{{ route('getFile', $_siteSettings['logo']) }}" /> <!-- image link, make sure it's jpg -->
         <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
         <meta name="twitter:card" content="summary_large_image" /> <!-- to have large image post format in Twitter -->
 
@@ -39,7 +39,7 @@
 
 
         <!-- Favicon  -->
-        <link rel="icon" href="{{ asset($_siteSettings['logo']) }}" />
+        <link rel="icon" href="{{ route('getFile', $_siteSettings['logo']) }}" />
 
         @yield('styles')
     </head>

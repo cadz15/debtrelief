@@ -60,7 +60,7 @@
     
                             <div class="w-1/2 sm:w-full">
                                 <label for="favicon" class="block text-sm font-medium text-gray-700">Logo Preview</label>
-                                <img src="{{ asset($siteSettings->logo) }}" alt="Favicon" class="w-20 h-20 mb-2">
+                                <img src="{{ route('getFile', $siteSettings->logo) }}" alt="Favicon" class="w-20 h-20 mb-2">
                             </div>
                         </div>
 

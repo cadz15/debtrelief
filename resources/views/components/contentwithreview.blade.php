@@ -30,7 +30,7 @@
                 <div class="flex items-center mt-6">
                     <img class="inline-block size-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                     <div class="ml-4">
-                        <p class="text-sm font-medium text-gray-900">John Doe</p>
+                        <p class="text-sm font-medium text-gray-900">Patick Smith</p>
                     </div>
                 </div>
             </div>

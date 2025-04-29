@@ -40,6 +40,8 @@ Route::group(['prefix' => 'consultation'], function () {
 });
 
 
+Route::get('/storage/uploads/{filename}', [SiteContentController::class, 'getFile'])->name('getFile');
+
 Route::group(['prefix' => '/admin', 'middleware' => ['auth']], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/accounts', [AccountController::class, 'accounts'])->name('admin.accounts');
