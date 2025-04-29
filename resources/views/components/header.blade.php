@@ -8,10 +8,10 @@
       <!-- Image Logo -->
       <a class="flex items-center gap-x-2 mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline" href="{{ route('home') }}">
           <img src="{{ route('getFile', $_siteSettings['logo']) }}" alt="{{ $_siteSettings['site_name'] }}" class="h-8" />
-          <span>{{ $_siteSettings['site_name'] }}</span>
+          <span class="text-sm md:text-lg">{{ $_siteSettings['site_name'] }}</span>
       </a>
 
-      <button class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400" type="button" data-toggle="offcanvas">
+      <button class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline inline-block lg:hidden lg:text-gray-400" type="button" id="hamburger-menu" data-toggle="offcanvas">
           <span class="navbar-toggler-icon inline-block w-8 h-8 align-middle"></span>
       </button>
 

@@ -27,7 +27,7 @@
         
             <div class="mx-auto mt-10 p-5 px-8 bg-white shadow-md rounded-lg">
                 <h1 class="text-2xl font-bold text-center mb-5">{{ $formData?->form_header ?? '' }}</h1>
-                <form method="POST" action="{{ route('cta.store') }}">
+                <form method="POST">
                     @csrf
                     <!-- Step 1 -->
                     @if($errors->any() || Session::has('success'))

@@ -1,7 +1,6 @@
 <!-- Footer -->
 <div class="footer">
     <div class="container px-4 sm:px-8">
-        {{-- <h4 class="mb-8 lg:max-w-3xl lg:mx-auto">Pavo is a mobile application for marketing automation and you can reach the team at <a class="text-indigo-600 hover:text-gray-500" href="mailto:email@domain.com">email@domain.com</a></h4> --}}
     </div> <!-- end of container -->
 </div> <!-- end of footer -->
 <!-- end of footer -->
