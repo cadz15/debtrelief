@@ -1,4 +1,4 @@
-@section('title', 'Welcome to Debt Relief')
+@section('title', 'Welcome to '. $_siteSettings['site_name'])
 
 @section('content')
     @include('components.hero')
