@@ -88,11 +88,11 @@
        
        <li>
          <a
-           href="{{ route('admin.dashboard') }}"
-           class="menu-item group @if(request()->routeIs('admin.dashboard')) menu-item-active @else menu-item-inactive @endif"
+           href="{{ route('admin.howitworks') }}"
+           class="menu-item group @if(request()->routeIs('admin.howitworks')) menu-item-active @else menu-item-inactive @endif"
          >
            <img
-             class="@if(request()->routeIs('admin.dashboard')) menu-item-active @else menu-item-inactive @endif"
+             class="@if(request()->routeIs('admin.howitworks')) menu-item-active @else menu-item-inactive @endif"
              width="22"
              height="22"
              src= "https://www.svgrepo.com/show/532791/file-question-alt.svg"
@@ -112,11 +112,11 @@
 
        <li>
          <a
-           href="{{ route('admin.dashboard') }}"
-           class="menu-item group @if(request()->routeIs('admin.dashboard')) menu-item-active @else menu-item-inactive @endif"
+           href="{{ route('admin.aboutUs') }}"
+           class="menu-item group @if(request()->routeIs('admin.aboutUs')) menu-item-active @else menu-item-inactive @endif"
          >
            <img
-             class="@if(request()->routeIs('admin.dashboard')) menu-item-active @else menu-item-inactive @endif"
+             class="@if(request()->routeIs('admin.aboutUs')) menu-item-active @else menu-item-inactive @endif"
              width="22"
              height="22"
              src= "https://www.svgrepo.com/show/524049/hand-heart.svg"
@@ -141,7 +141,7 @@
            :class=" (selected === 'Testimonials')  ? 'menu-item-active' : 'menu-item-inactive'"
          >
            <img
-             class="@if(request()->routeIs('admin.faq')) menu-item-active @else menu-item-inactive @endif"
+             class="@if(request()->routeIs('admin.testimonials')) menu-item-active @else menu-item-inactive @endif"
              width="22"
              height="22"
              src= "https://www.svgrepo.com/show/216617/customer-rate.svg"
@@ -184,7 +184,7 @@
            >
              <li>
                <a
-                 href="index.html"
+                 href="{{ route('admin.testimonial') }}"
                  class="menu-dropdown-item group"
                  :class="page === 'Testimonials' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                >
@@ -194,7 +194,7 @@
              
              <li>
                <a
-                 href="index.html"
+                 href="{{ route('admin.testimonial.create') }}"
                  class="menu-dropdown-item group"
                  :class="page === 'Testimonials1' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                >
@@ -258,9 +258,9 @@
            >
              <li>
                <a
-                 href="index.html"
+                 href="{{ route('admin.faq') }}"
                  class="menu-dropdown-item group"
-                 :class="page === 'Testimonials' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
+                 :class="page === 'faq-all' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                >
                  All FAQs
                </a>
@@ -268,9 +268,9 @@
              
              <li>
                <a
-                 href="index.html"
+                 href="{{ route('admin.faq.create') }}"
                  class="menu-dropdown-item group"
-                 :class="page === 'Testimonials1' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
+                 :class="page === 'faq-add' ? 'menu-dropdown-item-active' : 'menu-dropdown-item-inactive'"
                >
                  Add FAQ
                </a>

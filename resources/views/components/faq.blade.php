@@ -12,28 +12,19 @@
                 Debt relief refers to measures to reduce or refinance debt to make it easier for the borrower to repay.
             </div>
         </div>
+        @foreach($faqs as $faq)
         <div class="border-b border-gray-200 pb-4">
             <button class="w-full text-left flex justify-between items-center text-gray-900 font-medium text-lg focus:outline-none faq-button">
-                <h6>How does the program work?</h6>
+                <h6>{{ $faq->question }}</h6>
                 <svg class="w-5 h-5 transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
             <div class="mt-2 text-gray-600 hidden">
-                Our program negotiates with creditors to reduce the total amount of debt owed.
+                {{ $faq->answer }}
             </div>
         </div>
-        <div class="border-b border-gray-200 pb-4">
-            <button class="w-full text-left flex justify-between items-center text-gray-900 font-medium text-lg focus:outline-none faq-button">
-                <h6>Is this program right for me?</h6>
-                <svg class="w-5 h-5 transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <div class="mt-2 text-gray-600 hidden">
-                If you're struggling with debt and need assistance, this program may be a good fit for you.
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 

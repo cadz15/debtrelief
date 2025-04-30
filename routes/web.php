@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\SiteContentController;
+use App\Models\SiteSetting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,60 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $faqs = \App\Models\Faq::oldest()->get();
+    $testimonials = \App\Models\Testimonial::oldest()->get();
+
+    $heroSection = \App\Models\SiteContent::where('page_type', 'home-hero')->first();
+
+    if ($heroSection) {
+        $heroSection = json_decode($heroSection->content);
+    } else {
+        $heroSection = '';
+    }
+
+    $homeRightSection = \App\Models\SiteContent::where('page_type', 'home-right')->first();
+    if ($homeRightSection) {
+        $homeRightSection = json_decode($homeRightSection->content);
+    } else {
+        $homeRightSection = '';
+    }
+
+
+    $howItWorksStepSection = \App\Models\SiteContent::where('page_type', 'how-it-works-steps')->first();
+    if ($howItWorksStepSection) {
+        $howItWorksStepSection = json_decode($howItWorksStepSection->content);
+    } else {
+        $howItWorksStepSection = '';
+    }
+
+    $howItWorksFeatured = \App\Models\SiteContent::where('page_type', 'how-it-works-featured')->first();
+    if ($howItWorksFeatured) {
+        $howItWorksFeatured = json_decode($howItWorksFeatured->content);
+    } else {
+        $howItWorksFeatured = '';
+    }
+
+
+    $cardSection = \App\Models\SiteContent::where('page_type', 'about-us-cards')->first();
+
+    if ($cardSection) {
+        $cardData = json_decode($cardSection->content);
+    }else{
+        $cardData = null;
+    }
+
+
+    $consolCardSection = \App\Models\SiteContent::where('page_type', 'about-us-consolidation-cards')->first();
+
+    if ($consolCardSection) {
+        $consolCardData = json_decode($consolCardSection->content);
+    }else{
+        $consolCardData = null;
+    }
+
+
+    return view('welcome', compact('faqs', 'testimonials', 'heroSection', 'homeRightSection', 'howItWorksStepSection', 'howItWorksFeatured', 'cardData', 'consolCardData'));
 })->name('home');
 
 
@@ -43,7 +97,19 @@ Route::group(['prefix' => 'consultation'], function () {
 Route::get('/storage/uploads/{filename}', [SiteContentController::class, 'getFile'])->name('getFile');
 
 Route::group(['prefix' => '/admin', 'middleware' => ['auth']], function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/', [SiteContentController::class, 'index'])->name('admin.dashboard');
+    Route::post('/home/left', [SiteContentController::class, 'homeUpdateLeft'])->name('admin.home.left.update');
+    Route::post('/home/right', [SiteContentController::class, 'homeUpdateRight'])->name('admin.home.right.update');
+
+    Route::get('/how-it-works', [SiteContentController::class, 'howItWork'])->name('admin.howitworks');
+    Route::post('/how-it-works/left', [SiteContentController::class, 'howItWorkStepsUpdate'])->name('admin.howitworks.left.update');
+    Route::post('/how-it-works/right', [SiteContentController::class, 'howItWorkFeaturedUpdate'])->name('admin.howitworks.right.update');
+
+    Route::get('/why-choose-us', [SiteContentController::class, 'aboutUs'])->name('admin.aboutUs');
+    Route::post('/why-choose-us/left', [SiteContentController::class, 'aboutUsCardUpdate'])->name('admin.aboutUs.left.update');
+    Route::post('/why-choose-us/consolidation', [SiteContentController::class, 'aboutUsConsolCardUpdate'])->name('admin.aboutUs.right.update');
+
+    
     Route::get('/accounts', [AccountController::class, 'accounts'])->name('admin.accounts');
     Route::post('/accounts', [AccountController::class, 'accountList'])->name('admin.accounts.list');
     Route::get('/accounts/create', [AccountController::class, 'createAccount'])->name('admin.accounts.create');
@@ -65,13 +131,23 @@ Route::group(['prefix' => '/admin', 'middleware' => ['auth']], function () {
     Route::post('/consultation/left-section', [SiteContentController::class, 'updateConsultationHeroSection'])->name('admin.consultation.left.update');
     Route::post('/consultation/form-section', [SiteContentController::class, 'updateConsultationFormSection'])->name('admin.consultation.form.update');
 
-    Route::get('admin/#faq', function () {
-        return view('admin.admin');
-    })->name('admin.faq');
+    Route::get('/faq', [SiteContentController::class, 'faq'])->name('admin.faq');
+    Route::post('/faq/list', [SiteContentController::class, 'faqList'])->name('admin.faq.list');
+    Route::get('/faq/create', [SiteContentController::class, 'faqCreate'])->name('admin.faq.create');
+    Route::post('/faq/create', [SiteContentController::class, 'faqStore'])->name('admin.faq.store');
+    Route::get('/faq/edit/{id}', [SiteContentController::class, 'faqEdit'])->name('admin.faq.edit');
+    Route::post('/faq/edit/{id}', [SiteContentController::class, 'faqUpdate'])->name('admin.faq.update');
+    Route::delete('/faq/delete/{id}', [SiteContentController::class, 'faqDelete'])->name('admin.faq.delete');
 
-    Route::get('admin/#hello', function () {
-        return view('admin.admin');
-    })->name('admin.testimonial');
+    
+    Route::get('/testimonials', [SiteContentController::class, 'testimonial'])->name('admin.testimonial');
+    Route::post('/testimonials/list', [SiteContentController::class, 'testimonialList'])->name('admin.testimonial.list');
+    Route::get('/testimonials/create', [SiteContentController::class, 'testimonialCreate'])->name('admin.testimonial.create');
+    Route::post('/testimonials/create', [SiteContentController::class, 'testimonialStore'])->name('admin.testimonial.store');
+    Route::get('/testimonials/edit/{id}', [SiteContentController::class, 'testimonialEdit'])->name('admin.testimonial.edit');
+    Route::post('/testimonials/edit/{id}', [SiteContentController::class, 'testimonialUpdate'])->name('admin.testimonial.update');
+    Route::delete('/testimonials/delete/{id}', [SiteContentController::class, 'testimonialDelete'])->name('admin.testimonial.delete');
+
 });
 
 Auth::routes([

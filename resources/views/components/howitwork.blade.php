@@ -6,39 +6,38 @@
             <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
           </div>
 
-        <h1 class=" text-9xlfont-bold title-font text-gray-900 mt-10 mb-4">It's easy to get started</h1>
+        <h1 class=" text-9xlfont-bold title-font text-gray-900 mt-10 mb-4">{{ $howItWorksStepSection->section_title ?? '' }}</h1>
         
       </div>
       <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
         <div class="p-4 md:w-1/3 flex flex-col gap-y-6 text-center items-center" data-aos="zoom-in-up">
             <div class="w-52 h-52 md:w-36 md:h-36 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
-                <img src="{{ asset('images/man sit.png') }}" />
+                <img src="{{ route('getFile', $howItWorksStepSection->step1_image ?? '') }}" />
               </div>
           <div class="flex-grow">
-            <span class="text-gray-900 text-xl title-font font-bold mb-3">Submit your info</span>
-            <p class="font-medium w-11/12">When you contact FCA National Service, we start by understanding your current financial circumstances. This includes reviewing your debts, income, expenses, and financial goals.</p>
+            <span class="text-gray-900 text-xl title-font font-bold mb-3">{{ $howItWorksStepSection->step1_title ?? '' }}</span>
+            <p class="font-medium w-11/12">{{ $howItWorksStepSection->step1_description ?? '' }}</p>
           </div>
         </div>
         <div class="p-4 md:w-1/3 flex flex-col gap-y-6 text-center items-center" data-aos="zoom-in-up">
           <div class="w-52 h-52 md:w-36 md:h-36 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
-            <img src="{{ asset('images/lady sit.png') }}" />
+            <img src="{{ route('getFile', $howItWorksStepSection->step2_image ?? '') }}" />
           </div>
           <div class="flex-grow">
-            <span class="text-gray-900 text-xl title-font font-bold mb-3">We negotiate your debt</span>
+            <span class="text-gray-900 text-xl title-font font-bold mb-3">{{ $howItWorksStepSection->step2_title ?? '' }}</span>
             <p class="font-medium w-11/12">
-                Based on the information gathered during the consultation, our team of experts creates a personalized debt relief plan tailored to your specific needs.
+              {{ $howItWorksStepSection->step2_description ?? '' }}
             </p>
           </div>
         </div>
         <div class="p-4 md:w-1/3 flex flex-col gap-y-6 md:pt-4 pt-12 text-center items-center" data-aos="zoom-in-up">
             <div class="w-52 h-52 md:w-36 md:h-36 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
-                <img src="{{ asset('images/man happy.png') }}" />
+                <img src="{{ route('getFile', $howItWorksStepSection->step3_image ?? '') }}" />
               </div>
           <div class="flex-grow">
-            <span class="text-gray-900 text-xl title-font font-bold mb-3">Live debt free!</span>
+            <span class="text-gray-900 text-xl title-font font-bold mb-3">{{ $howItWorksStepSection->step3_title ?? '' }}</span>
             <p class="font-medium w-11/12">
-                Once you approve the debt relief plan, we take action on your behalf. Our skilled negotiators engage with your creditors to potentially lower interest rates,
-                 reduce the overall amount.
+              {{ $howItWorksStepSection->step3_description ?? '' }}
             </p>
             
           </div>

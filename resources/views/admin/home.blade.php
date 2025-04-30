@@ -1,9 +1,9 @@
-@section('title', 'CMS | Consulation Page')
+@section('title', 'CMS | Home ')
 
 @section('content')
 
     <div class="flex items-center justify-between px-4 py-3 bg-white darksbg-gray-900 border-b border-gray-200 darksborder-gray-800">
-        <span class="text-2xl font-bold">Consulation Page</span>
+        <span class="text-2xl font-bold">Home </span>
     </div>
 
 
@@ -71,46 +71,39 @@
 
             <div class="rounded-2xl w-1/2 h-fit border border-gray-200 bg-white p-5  md:p-6">
                 <div class="flex rounded-xl">
-                  <h1 class="font-bold text-lg">Form Section</h1>
+                  <h1 class="font-bold text-lg">Right Section</h1>
                 </div>
                         
-                <form id="form-section">
+                <form id="form-section" action="{{ route('admin.home.right.update')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                 <div class="mt-6 mb-6 flex gap-y-4 flex-col">
                         <!-- Section Title -->
-                        <div>
-                            <label for="form_header" class="block text-sm font-medium text-gray-700">Form Header</label>
-                            <input type="text" name="form_header" id="form_header" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-                                value="{{ old('form_header', $formData?->form_header ?? '') }}">
-                            @error('form_header')
-                                <span class="text-red-500 text-sm">{{ $message }}</span>
-                            @enderror
-                        </div>
+                        <div class="flex gap-4 flex-col">
+                            <div class="w-full">
+                                <label for="video" class="block text-sm font-medium text-gray-700">Video</label>
+                                <input type="file"
+                                class="w-full text-slate-500 font-medium text-sm bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 
+                                file:py-2 file:px-4 file:mr-4 file:bg-gray-800 file:hover:bg-gray-700 file:text-white rounded"
+                                name="video" id="video"/>
+                                <span class="text-gray-500 text-sm">Video file with max file size of 25mb</span>
+                                @error('video')
+                                <p>
 
-                        <!-- Disclaimer / Term -->
-                        <div>
-                            <label for="term_disclaimer" class="block text-sm font-medium text-gray-700">Submit Disclaimer / Term</label>
-                            <textarea type="text" name="term_disclaimer" id="term_disclaimer" required multiple
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2" rows="8"
-                                >{{ old('term_disclaimer', $formData?->term_disclaimer ?? '') }}</textarea>
-                            @error('term_disclaimer')
-                                <span class="text-red-500 text-sm">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <!-- Disclaimer / Term -->
-                        <div>
-                            <label for="editor" class="block text-sm font-medium text-gray-700">Form Complete Message</label>
-                            <div id="editor">
-                               {!! old('complete_message', $formData?->complete_message ?? '') !!}
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                </p>
+                                @enderror
+                            </div>
+    
+                            <div class="w-full">
+                                <label for="favicon" class="block text-sm font-medium text-gray-700">Logo Preview</label>
+                                <video controls autoplay src="{{ route('getFile', $rightContents?->video?? '') }}" alt="Favicon" class="mb-2">
                             </div>
                         </div>
 
                         <!-- Submit -->
                         <button type="submit" class="inline-flex justify-center mt-6 py-2 px-4 border border-blue-700 rounded-md shadow-sm text-sm font-medium 
                                text-blue-600 hover:text-white  hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                            Update Form
+                            Update
                         </button>
                     </div>
                 </form>
@@ -139,9 +132,6 @@
 
   $(document).ready(function() {
 
-    const quill = new Quill('#editor', {
-        theme: 'snow'
-    });
     
     $('#hero-section-form').on('submit', function(e) {
         e.preventDefault();
@@ -149,7 +139,7 @@
         let formData = $(this).serialize();
 
         $.ajax({
-            url: "{{ route('admin.consultation.left.update') }}",
+            url: "{{ route('admin.home.left.update') }}",
             method: "POST",
             data: formData,
             headers: {
@@ -163,52 +153,6 @@
                 });
                 $(this).attr("disabled", false); 
                 $('#error-message').hide();
-            },
-            error: function(xhr) {
-                let errors = xhr.responseJSON?.errors;
-                if (errors) {
-                    let errorMessage = Object.values(errors).flat().join('<br>');
-                    $('#error-message').show().html(errorMessage);
-                } else {
-                    $('#error-message').show().text('An error occurred.');
-                }
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error!',
-                    text: 'Failed to update section.',
-                });
-            }
-        });
-    });
-
-
-    $('#form-section').on('submit', function(e) {
-        e.preventDefault();
-
-        const formHeader = $('#form_header').val();
-        const formDisclaimer = $('#term_disclaimer').val();
-        const completeMessage = quill.getSemanticHTML().replace(/&nbsp;/g, ' '); 
-
-        $.ajax({
-            url: "{{ route('admin.consultation.form.update') }}",
-            method: "POST",
-            data: {
-                _token: "{{ csrf_token() }}",
-                form_header: formHeader,
-                term_disclaimer: formDisclaimer,
-                complete_message: completeMessage
-            },
-            headers: {
-                'X-CSRF-TOKEN': $('input[name="_token"]').val()
-            },
-            success: function(response) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success!',
-                    text: response.message,
-                });
-                $(this).attr("disabled", false); 
-                $('#error-messag').hide();
             },
             error: function(xhr) {
                 let errors = xhr.responseJSON?.errors;
