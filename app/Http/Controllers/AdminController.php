@@ -39,6 +39,7 @@ class AdminController extends Controller
                 'min:10',
             ],
             'site_description' => 'required|string|max:1000',
+            'address' => 'required|string',
             'logo' => 'sometimes|mimes:jpg,png,pdf|max:2048'
         ]);
 
@@ -46,6 +47,7 @@ class AdminController extends Controller
         SiteSetting::first()->update([
             'site_name' => $validatedData['site_name'],
             'phone' => $validatedData['phone'],
+            'address' => $validatedData['address'],
             'site_description' => $validatedData['site_description'],
         ]);
 

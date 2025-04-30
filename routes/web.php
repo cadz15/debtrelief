@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\SiteContentController;
-use App\Models\SiteSetting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,74 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-
-    $faqs = \App\Models\Faq::oldest()->get();
-    $testimonials = \App\Models\Testimonial::oldest()->get();
-
-    $heroSection = \App\Models\SiteContent::where('page_type', 'home-hero')->first();
-
-    if ($heroSection) {
-        $heroSection = json_decode($heroSection->content);
-    } else {
-        $heroSection = '';
-    }
-
-    $homeRightSection = \App\Models\SiteContent::where('page_type', 'home-right')->first();
-    if ($homeRightSection) {
-        $homeRightSection = json_decode($homeRightSection->content);
-    } else {
-        $homeRightSection = '';
-    }
-
-
-    $howItWorksStepSection = \App\Models\SiteContent::where('page_type', 'how-it-works-steps')->first();
-    if ($howItWorksStepSection) {
-        $howItWorksStepSection = json_decode($howItWorksStepSection->content);
-    } else {
-        $howItWorksStepSection = '';
-    }
-
-    $howItWorksFeatured = \App\Models\SiteContent::where('page_type', 'how-it-works-featured')->first();
-    if ($howItWorksFeatured) {
-        $howItWorksFeatured = json_decode($howItWorksFeatured->content);
-    } else {
-        $howItWorksFeatured = '';
-    }
-
-
-    $cardSection = \App\Models\SiteContent::where('page_type', 'about-us-cards')->first();
-
-    if ($cardSection) {
-        $cardData = json_decode($cardSection->content);
-    }else{
-        $cardData = null;
-    }
-
-
-    $consolCardSection = \App\Models\SiteContent::where('page_type', 'about-us-consolidation-cards')->first();
-
-    if ($consolCardSection) {
-        $consolCardData = json_decode($consolCardSection->content);
-    }else{
-        $consolCardData = null;
-    }
-
-
-    return view('welcome', compact('faqs', 'testimonials', 'heroSection', 'homeRightSection', 'howItWorksStepSection', 'howItWorksFeatured', 'cardData', 'consolCardData'));
-})->name('home');
-
-
-
-Route::get('/disclaimer', function () {
-    $siteContent = \App\Models\SiteContent::where('page_type', 'disclaimer')->first();
-    if ($siteContent) {
-        $disclaimer = json_decode($siteContent->content)->data ?? '';
-    } else {
-        $disclaimer = '';
-    }
-    return view('disclaimer', compact('disclaimer'));
-})->name('disclaimer');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaimer');
 
 Route::group(['prefix' => 'consultation'], function () {
     Route::get('/', [\App\Http\Controllers\LeadController::class, 'index'])->name('cta');

@@ -14,11 +14,11 @@
             <li class="mb-2"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
             @endif
         </ul>
-        <span class="pb-2 p-small font-semibold statement">Copyright © <a href="" class="no-underline">{{ $_siteSettings['site_name'] }}</a></span>
-        <ul class="mb-4 list-unstyled p-small flex">
-            <li class="mb-2"><span><i class="fa-solid fa-phone"></i> {{ $_siteSettings['phone'] }}</span></li>
-            <li class="mb-2"><span><i class="fa-solid fa-location-dot"></i> 3702 W Spruce St. #1211 Tampa, FL 33607 United States</span></li>
-        </ul>
+        <span class="pb-2 p-small font-semibold statement">Copyright © <a href="" class="no-underline">{{ $_siteSettings['site_name'] ?? '' }}</a></span>
+        <p class="mb-4 list-unstyled p-small flex lg:flex-col flex-row">
+            <p class="mb-2"><span><i class="fa-solid fa-phone"></i> {{ $_siteSettings['phone'] ?? '' }}</span></p>
+            <p class="mb-2"><span><i class="fa-solid fa-location-dot"></i> {{ $_siteSettings['address'] ?? '' }}</span></p>
+        </p>
     </div> 
 
 
