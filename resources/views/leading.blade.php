@@ -166,23 +166,21 @@
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="flex flex-row gap-2">
-                                <div class="w-2/3">
-                                    <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Phone</legend>
-                                    <input type="text" required  class="input w-full text-lg" id="phoneNumber" name="phone_number" 
-                                    value="{{ old('phone_number', '') }}"/>
-                                    @error('phone_number')
-                                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="w-1/3">
-                                    <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Zip</legend>
-                                    <input type="text" required  class="input w-full text-lg" id="zip" name="zip" 
-                                    value="{{ old('zip', '') }}"/>
-                                    @error('zip')
+                            <div>
+                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Phone</legend>
+                                <input type="text" required  class="input w-full text-lg" id="phoneNumber" name="phone_number" 
+                                value="{{ old('phone_number', '') }}"/>
+                                @error('phone_number')
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
-                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Address</legend>
+                                <input type="text" required  class="input w-full text-lg" id="address" name="address" 
+                                value="{{ old('address', '') }}"/>
+                                @error('address')
+                                <span class="text-red-500 text-sm">{{ $message }}</span>
+                            @enderror
                             </div>
                             <div>
                                 <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Email</legend>

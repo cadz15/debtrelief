@@ -85,7 +85,7 @@ class LeadController extends Controller
             'last_name' => $validatedData['last_name'],
             'email' => $validatedData['email'],
             'phone_number' => $validatedData['phone_number'],
-            'zip' => $validatedData['zip'],
+            'address' => $validatedData['address'],
             'debt_amount' => $validatedData['debt_amount'],
             'financial_difficulty' => json_encode($validatedData['financial_difficulty']),
             'debts' => json_encode($validatedData['debts']),

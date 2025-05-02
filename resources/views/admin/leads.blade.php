@@ -28,6 +28,7 @@
                                     <th class="px-6 py-3  text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Financial Difficulty</th>
                                     <th class="px-6 py-3  text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Debts</th>
                                     <th class="px-6 py-3  text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Home Status</th>
+                                    <th class="px-6 py-3  text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Address</th>
                                     <th class="px-6 py-3  text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Date</th>
                                 </tr>
                             </thead>
@@ -87,6 +88,7 @@
                 { data: 'financial_difficulty', name: 'financial_difficulty' },
                 { data: 'debts', name: 'debts' },
                 { data: 'home_status', name: 'home_status' },
+                { data: 'address', name: 'address' },
                 { data: 'date', name: 'date' },
             ],
             dom: 'Bfrtip',

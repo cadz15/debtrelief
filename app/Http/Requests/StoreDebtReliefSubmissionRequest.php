@@ -42,7 +42,7 @@ class StoreDebtReliefSubmissionRequest extends FormRequest
                 'regex:/^\(\d{3}\) \d{3}-\d{4}$/', // Regular expression to match the phone number format (XXX) XXX-XXXX
                 'min:10',
             ],
-            'zip' => 'required|string|max:10',
+            'address' => 'required|string',
             'email' => 'required|email|max:255',
         ];
     }

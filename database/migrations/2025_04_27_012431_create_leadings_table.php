@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->string('phone_number');
-            $table->string('zip');
+            $table->string('address');
             $table->integer('debt_amount');
             $table->json('financial_difficulty');
             $table->json('debts');
