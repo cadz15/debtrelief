@@ -5,7 +5,7 @@
             <div class="flex flex-col gap-y-2">
                 {!! $hero !!}
             </div>
-            <div class="w-full flex mt-4 justify-center">
+            <div class="w-full flex mt-8 justify-center">
                 <a class="btn-solid-lg justify-self-center" href="{{ route('cta') }}">Book A Free Consultation</a>
             </div>
         </div>
