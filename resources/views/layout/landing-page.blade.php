@@ -42,9 +42,9 @@
 
         <style>
             /* Ensure font size classes work */
-            .ql-size-small { font-size: 0.75em !important; }
-            .ql-size-large { font-size: 1.5em !important; }
-            .ql-size-huge { font-size: 2em !important; }
+            .ql-size-small { font-size: 1rem !important; }
+            .ql-size-large { font-size: 1.7rem !important; }
+            .ql-size-huge { font-size: 2.5rem !important; }
 
             .ql-align-center { text-align: center !important; }
             .ql-align-right { text-align: right !important; }
