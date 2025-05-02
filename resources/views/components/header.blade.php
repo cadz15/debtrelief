@@ -7,7 +7,7 @@
 
       <!-- Image Logo -->
       <a class="flex items-center gap-x-2 mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline" href="{{ route('home') }}">
-          <img src="{{ route('getFile', $_siteSettings['logo']) }}" alt="{{ $_siteSettings['site_name'] }}" class="h-8" />
+          <img src="{{ route('getFile', $_siteSettings['logo']) }}" alt="{{ $_siteSettings['site_name'] }}" class="h-16" />
           <span class="text-sm md:text-lg">{{ $_siteSettings['site_name'] }}</span>
       </a>
 
