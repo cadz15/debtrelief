@@ -56,6 +56,15 @@
                                 <span class="text-red-500 text-sm">{{ $message }}</span>
                             @enderror
                         </div>
+                        <div>
+                            <label for="year" class="block text-sm font-medium text-gray-700">Year</label>
+                            <input type="text" name="year" id="year"  required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                            placeholder="Ex. 2025" value="{{ $siteSettings->year }}">
+                            @error('year')
+                                <span class="text-red-500 text-sm">{{ $message }}</span>
+                            @enderror
+                        </div>
 
                         <div class="flex gap-4 flex-col sm:flex-row">
                             <div class="w-1/2 sm:w-full">

@@ -15,6 +15,7 @@ class SiteSetting extends Model
         'address',
         'site_description',
         'logo',
+        'year'
     ];
 
     protected $casts = [

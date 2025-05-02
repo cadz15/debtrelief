@@ -8,54 +8,25 @@
 
 
     <div class="container ">
-        <div class="flex  gap-x-4 px-24 py-12">
-            <div class="rounded-2xl w-1/2 h-fit border border-gray-200 bg-white p-5  md:p-6">
+        <div class="flex flex-col xl:flex-row gap-x-4 gap-y-4 px-24 py-12">
+            <div class="rounded-2xl w-full lg:w-1/2 h-fit border border-gray-200 bg-white p-5  md:p-6">
                 <div class="flex rounded-xl">
                   <h1 class="font-bold text-lg">Left Section</h1>
                 </div>
             
                 <form id="hero-section-form">
                     @csrf
-                <div class="mt-6 mb-6 flex gap-y-4 flex-col">
+                <div class="mt-6 mb-6 flex flex-col">
                         <!-- Section Title -->
-                        <div>
-                            <label for="section_title" class="block text-sm font-medium text-gray-700">Header</label>
-                            <input type="text" name="section_title" id="section_title" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-                                value="{{ old('section_title', $contents?->section_title ?? '') }}">
-                            @error('section_title')
+                        <div id="editor">
+                            {!! $hero !!}
+                        </div>
+
+                        @error('hero')
+                            <p>
                                 <span class="text-red-500 text-sm">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <!-- Section Description -->
-                        <div>
-                            <label for="section_description" class="block text-sm font-medium text-gray-700">Description</label>
-                            <input type="text" name="section_description" id="section_description" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-                                value="{{ old('section_description', $contents?->section_description ?? '') }}">
-                            @error('section_description')
-                                <span class="text-red-500 text-sm">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <!-- Bullet Points -->
-                        <div id="bullet-points-wrapper" class="space-y-2 mt-4">
-                            <label class="block text-sm font-medium text-gray-700">Bullet Points</label>
-
-                            @php
-                                $bullets = $contents?->hero_bullets ?? [];
-                            @endphp
-
-                            @foreach ($bullets as $index => $bullet)
-                                <div class="flex gap-2">
-                                    <input type="text" name="hero_bullets[]" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2" value="{{ $bullet }}">
-                                    <button type="button" class="remove-bullet text-red-500">Remove</button>
-                                </div>
-                            @endforeach
-                        </div>
-
-                        <button type="button" id="add-bullet" class="mt-2 text-sm text-blue-600">+ Add Bullet Point</button>
+                            </p>
+                        @enderror
 
                         <!-- Submit -->
                         <button type="submit" class="inline-flex justify-center mt-6 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium 
@@ -69,7 +40,7 @@
 
 
 
-            <div class="rounded-2xl w-1/2 h-fit border border-gray-200 bg-white p-5  md:p-6">
+            <div class="rounded-2xl w-full lg:w-1/2 h-fit border border-gray-200 bg-white p-5  md:p-6">
                 <div class="flex rounded-xl">
                   <h1 class="font-bold text-lg">Right Section</h1>
                 </div>
@@ -131,17 +102,33 @@
 
 
   $(document).ready(function() {
-
+    var toolbarOptions = [
+    ['bold', 'italic', 'underline'],        // toggled buttons
+    [{ 'list': 'bullet' }],
+    [{ 'color': [] }],                      // dropdown with defaults from theme
+    [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+    [{ 'align': [] }],
+    ['link']                                // link button
+  ];
+    const quill = new Quill('#editor', {
+        theme: 'snow',
+        modules: {
+            toolbar: toolbarOptions
+        }
+    });
     
     $('#hero-section-form').on('submit', function(e) {
         e.preventDefault();
 
-        let formData = $(this).serialize();
-
+        const heroContent = quill.getSemanticHTML().replace(/&nbsp;/g, ' '); // Get the HTML content from the editor
+    
         $.ajax({
             url: "{{ route('admin.home.left.update') }}",
             method: "POST",
-            data: formData,
+            data: {
+                _token: '{{ csrf_token() }}',
+                hero: heroContent,
+            },
             headers: {
                 'X-CSRF-TOKEN': $('input[name="_token"]').val()
             },
@@ -156,12 +143,6 @@
             },
             error: function(xhr) {
                 let errors = xhr.responseJSON?.errors;
-                if (errors) {
-                    let errorMessage = Object.values(errors).flat().join('<br>');
-                    $('#error-message').show().html(errorMessage);
-                } else {
-                    $('#error-message').show().text('An error occurred.');
-                }
                 Swal.fire({
                     icon: 'error',
                     title: 'Error!',

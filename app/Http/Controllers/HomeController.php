@@ -16,12 +16,12 @@ class HomeController extends Controller
         $faqs = Faq::oldest()->get();
         $testimonials = Testimonial::oldest()->get();
     
-        $heroSection = SiteContent::where('page_type', 'home-hero')->first();
-    
-        if ($heroSection) {
-            $heroSection = json_decode($heroSection->content);
+        $leftContent = SiteContent::where('page_type', 'home-hero')->first();
+
+        if ($leftContent) {
+            $hero = json_decode($leftContent->content)->data ?? '';
         } else {
-            $heroSection = '';
+            $hero = '';
         }
     
         $homeRightSection = SiteContent::where('page_type', 'home-right')->first();
@@ -65,7 +65,7 @@ class HomeController extends Controller
         }
     
     
-        return view('welcome', compact('faqs', 'testimonials', 'heroSection', 'homeRightSection', 'howItWorksStepSection', 'howItWorksFeatured', 'cardData', 'consolCardData'));
+        return view('welcome', compact('faqs', 'testimonials', 'hero', 'homeRightSection', 'howItWorksStepSection', 'howItWorksFeatured', 'cardData', 'consolCardData'));
     }
 
 

@@ -14,13 +14,12 @@ class SiteContentController extends Controller
     {
         $siteContent = SiteContent::where('page_type', 'home-right')->first();
         
-        $heroContent = SiteContent::where('page_type', 'home-hero')->first();
+        $leftContent = SiteContent::where('page_type', 'home-hero')->first();
 
-
-        if ($heroContent) {
-            $contents = json_decode($heroContent->content);
-        }else {
-            $contents = [];
+        if ($leftContent) {
+            $hero = json_decode($leftContent->content)->data ?? '';
+        } else {
+            $hero = '';
         }
 
         if ($siteContent) {
@@ -29,16 +28,13 @@ class SiteContentController extends Controller
             $rightContents = [];
         }
 
-        return view('admin.home', compact('rightContents', 'contents'));
+        return view('admin.home', compact('rightContents', 'hero'));
     }
 
     public function homeUpdateLeft(Request $request)
     {
         $validatedData = $request->validate([
-            'section_title' => 'required|string',
-            'section_description' => 'required|string',
-            'hero_bullets' => 'nullable|array',
-            'hero_bullets.*' => 'string'
+            'hero' => 'required|string',
         ]);
 
         $siteContent = SiteContent::where('page_type', 'home-hero')->first();
@@ -46,18 +42,14 @@ class SiteContentController extends Controller
         if ($siteContent) {
             $siteContent->update([
                 'content' => json_encode([
-                    'section_title' => $validatedData['section_title'],
-                    'section_description' => $validatedData['section_description'],
-                    'hero_bullets' => $validatedData['hero_bullets'] ?? []
+                    'data' => $validatedData['hero'],
                 ]),
             ]);
         } else {
             SiteContent::create([
                 'page_type' => 'home-hero',
                 'content' => json_encode([
-                    'section_title' => $validatedData['section_title'],
-                    'section_description' => $validatedData['section_description'],
-                    'hero_bullets' => $validatedData['hero_bullets'] ?? []
+                    'data' => $validatedData['hero']
                 ])
             ]);
         }

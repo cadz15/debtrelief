@@ -30,6 +30,8 @@
         <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
         <script src="https://themewagon.github.io/pavo/js/jquery.min.js"></script>
         <script src="https://themewagon.github.io/pavo/js/jquery.magnific-popup.js"></script>
+        
+        <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 
         @vite(['resources/css/app.css', 'resources/css/styles.css', 
         'resources/css/magnific-popup.css', 'resources/css/swiper.css',
@@ -38,6 +40,16 @@
 
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+        <style>
+            /* Ensure font size classes work */
+            .ql-size-small { font-size: 0.75em !important; }
+            .ql-size-large { font-size: 1.5em !important; }
+            .ql-size-huge { font-size: 2em !important; }
+
+            .ql-align-center { text-align: center !important; }
+            .ql-align-right { text-align: right !important; }
+            .ql-align-justify { text-align: justify !important; }
+        </style>
 
         <!-- Favicon  -->
         <link rel="icon" href="{{ route('getFile', $_siteSettings['logo']) }}" />

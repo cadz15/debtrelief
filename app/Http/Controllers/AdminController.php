@@ -40,7 +40,8 @@ class AdminController extends Controller
             ],
             'site_description' => 'required|string|max:1000',
             'address' => 'required|string',
-            'logo' => 'sometimes|mimes:jpg,png,pdf|max:2048'
+            'logo' => 'sometimes|mimes:jpg,png,pdf|max:2048',
+            'year' => 'sometimes|string',
         ]);
 
        
@@ -49,6 +50,7 @@ class AdminController extends Controller
             'phone' => $validatedData['phone'],
             'address' => $validatedData['address'],
             'site_description' => $validatedData['site_description'],
+            'year' => $validatedData['year']
         ]);
 
         if ($request->hasFile('logo')) {

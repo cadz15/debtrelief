@@ -2,7 +2,7 @@
     <div class="container flex">
         <div class="hidden md:w-4/12 md:block" data-aos="fade-up-right">
             <div class="xl:text-right md:block hidden">
-                <img class="inline" src="{{ route('getFile', $howItWorksFeatured->section_image) }}" alt="alternative" />
+                <img class="inline" src="{{ route('getFile', $howItWorksFeatured->section_image ?? '') }}" alt="alternative" />
             </div>
         </div>
         <div class="w-full md:w-8/12 md:pl-14" data-aos="fade-up-left">
