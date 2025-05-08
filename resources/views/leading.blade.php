@@ -174,7 +174,7 @@
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="w-1/3">
+                            <div >
                                 <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Address</legend>
                                 <input type="text" required  class="input w-full text-lg" id="address" name="address" 
                                 value="{{ old('address', '') }}"/>
