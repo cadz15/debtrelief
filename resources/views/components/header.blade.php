@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar fixed-top">
+<nav class="navbar fixed-top" style="background-color: rgb(241, 249, 252);">
   <div class="container sm:px-4 lg:px-8 flex flex-wrap items-center justify-between lg:flex-nowrap">
       
       <!-- Text Logo - Use this if you don't have a graphic logo -->
@@ -30,6 +30,13 @@
                 <a class="nav-link page-scroll" href="#whyus">Why Choose Us</a>
                 @else
                 <a class="nav-link page-scroll" href="{{ route('home') }}#whyus">Why Choose Us</a>
+                @endif
+              </li>
+              <li>
+                @if(request()->routeIs('home'))
+                <a class="nav-link page-scroll" href="#services">Our Services</a>
+                @else
+                <a class="nav-link page-scroll" href="{{ route('services') }}#services">Our Services</a>
                 @endif
               </li>
               <li>

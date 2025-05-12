@@ -7,7 +7,7 @@
     </div>
 
 
-    <div class="container ">
+    <div class="container " >
         <div class="flex flex-col xl:flex-row gap-x-4 gap-y-4 px-24 py-12">
             <div class="rounded-2xl w-full lg:w-1/2 h-fit border border-gray-200 bg-white p-5  md:p-6">
                 <div class="flex rounded-xl">

@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaimer');
+Route::get('/our-services', [HomeController::class, 'services'])->name('services');
 
 Route::group(['prefix' => 'consultation'], function () {
     Route::get('/', [\App\Http\Controllers\LeadController::class, 'index'])->name('cta');

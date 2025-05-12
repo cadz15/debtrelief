@@ -6,7 +6,7 @@
     @include('components.contentwithreview')
     @include('components.whyus')
     @include('components.details')
-
+    @include('components.services')
     @include('components.testimonials')
 
     @include('components.faq')

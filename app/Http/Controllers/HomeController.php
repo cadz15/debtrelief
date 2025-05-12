@@ -79,4 +79,10 @@ class HomeController extends Controller
         }
     return view('disclaimer', compact('disclaimer'));
     }
+
+
+    public function services()
+    {
+        return view('services');
+    }
 }
