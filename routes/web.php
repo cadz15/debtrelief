@@ -23,6 +23,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaimer');
 Route::get('/our-services', [HomeController::class, 'services'])->name('services');
 
+Route::group(['prefix' => 'service'], function () {    
+    Route::get('/business-debt', [HomeController::class, 'servicesBusinessDebt'])->name('services.business-debt');
+    Route::get('/debt-collection-defense', [HomeController::class, 'servicesDebtCollection'])->name('services.debt-collection');
+});
+
 Route::group(['prefix' => 'consultation'], function () {
     Route::get('/', [\App\Http\Controllers\LeadController::class, 'index'])->name('cta');
     Route::post('/', [\App\Http\Controllers\LeadController::class, 'store'])->name('cta.store');

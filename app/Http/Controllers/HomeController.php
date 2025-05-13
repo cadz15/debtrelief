@@ -85,4 +85,13 @@ class HomeController extends Controller
     {
         return view('services');
     }
+
+    public function servicesBusinessDebt()
+    {
+        return view('services.business-debt');
+    }
+    public function servicesDebtCollection()
+    {
+        return view('services.debt-collection');
+    }
 }
