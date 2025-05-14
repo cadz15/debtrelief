@@ -24,8 +24,11 @@ Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaim
 Route::get('/our-services', [HomeController::class, 'services'])->name('services');
 
 Route::group(['prefix' => 'service'], function () {    
+    Route::get('/consumer-debt', [HomeController::class, 'servicesConsumerDebt'])->name('services.consumer-debt');
     Route::get('/business-debt', [HomeController::class, 'servicesBusinessDebt'])->name('services.business-debt');
     Route::get('/debt-collection-defense', [HomeController::class, 'servicesDebtCollection'])->name('services.debt-collection');
+    Route::get('/mortgage-debt', [HomeController::class, 'servicesMortgageDebt'])->name('services.mortgage-debt');
+    Route::get('/foreclosure-defense', [HomeController::class, 'servicesForeClosureDefense'])->name('services.foreclosure-defense');
 });
 
 Route::group(['prefix' => 'consultation'], function () {

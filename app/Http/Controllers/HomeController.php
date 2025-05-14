@@ -86,12 +86,28 @@ class HomeController extends Controller
         return view('services');
     }
 
+    public function servicesConsumerDebt()
+    {
+        return view('services.consumer-debt');
+    }
+
     public function servicesBusinessDebt()
     {
         return view('services.business-debt');
     }
+
     public function servicesDebtCollection()
     {
         return view('services.debt-collection');
+    }
+
+    public function servicesMortgageDebt()
+    {
+        return view('services.mortgage-debt');
+    }
+
+    public function servicesForeClosureDefense()
+    {
+        return view('services.foreclosure-defense');
     }
 }

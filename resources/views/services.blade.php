@@ -29,7 +29,7 @@
                     <p class="text-gray-600 mb-4">
                         <span >Experiencing a financial hardship and past due on your creditor payments? Our <strong>No Upfront Fee Debt Settlement service</strong> can reduce your outstanding balances to help <strong>get you out of debt in as quick as 1 to 60 months</strong>!&nbsp; Rather than lower your interest rates, we’ll actually <strong>reduce your total debt.<br></strong></span>
                     </p>
-                    <a href="{{ route('services.business-debt') }}" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
+                    <a href="{{ route('services.consumer-debt') }}" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
                 </div>
                 
                 <!-- Contracts & Agreements -->
@@ -77,7 +77,7 @@
                     <p class="text-gray-600 mb-4">
                         <span>Offering various options to help you either stay in your home or, to exit your home as painlessly as possible.&nbsp;&nbsp; We offer <strong>Loan Modifications</strong>, <strong>Principal Reduction</strong>, <strong>Short Sale</strong>, and <strong>Deed in Lieu of Foreclosure</strong> negotiations.&nbsp; Our Law Firm has plenty of tools to help fix your home financial problems.</span>
                     </p>
-                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
+                    <a href="{{ route('services.mortgage-debt') }}" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
                 </div>
                 
                 <!-- Dispute Resolution -->
@@ -89,7 +89,7 @@
                     <p class="text-gray-600 mb-4">
                         <span>If you are already facing foreclosure, one of our foreclosure defense lawyers can help you <strong>avoid foreclosure starting today</strong>. Our foreclosure defense attorneys can not only buy you time with the matter but can assist you to <strong>fight back against your lender to help you save your home</strong>.</span>
                     </p>
-                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
+                    <a href="{{ route('services.foreclosure-defense') }}" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
                 </div>
                 <!-- Business Formation -->
                 <div class="bg-white p-8 rounded-lg custom-shadow service-card transition duration-300">

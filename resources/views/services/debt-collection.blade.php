@@ -39,7 +39,84 @@
     </section>
 
 
+    <div class="bg-gray py-16">
+        <div class="container flex">
+            <div class="hidden md:w-4/12 md:block" data-aos="fade-up-right">
+                <div class="xl:text-right h-full md:block hidden">
+                    <img class="inline h-[500px] object-cover " src="https://dramerlaw.com/wp-content/uploads/2018/06/team-3373638_960_720.jpg"  alt="alternative" />
+                </div>
+            </div>
+            <div class="w-full md:w-8/12 md:pl-14" data-aos="fade-up-left">
+                <div class="text-center md:text-left ">
+                    <h3 class="text-3xl font-extrabold text-gray-900 sm:text-5xl">
+                        I Received a Wage Garnishment Notification. 
+                        Can Debt Collection Lawsuit Defense Help?
+                    </h3>
+                    <p class="mt-12 md:px-0 px-4 text-lg text-justify">
+                      ABSOLUTELY!  If there is a judgment against you, your salary can now be garnished without being given any further notice.   If the judgment causing the garnishment was entered against you by way of default, we might be able to vacate the judgment and stop the garnishment.  That means if you were sued but weren’t served and therefore didn’t even know about the lawsuit, we may be able to fight the judgment and get it removed – along with the garnishment.  If the judgment is valid and you were served correctly but didn’t defend yourself or did defend and lost the case, then we can still help in other ways.
+                   </p>
+                   <p class="mt-4">
+                    
+                    If you received an income execution order to garnish your wages, most times, we can settle the judgment amount for less than the amount owed.  Although settlements in these cases are typically at higher payback percentages, any savings is better than paying the full amount plus interest, court fees, and Marshall or Sheriff fees.  Once you pay off the negotiated settlement amount, we will obtain a Letter of Satisfactory Judgment for you.  If you do not have the funds to settle, we help you work out a voluntary payment plan or file for bankruptcy if you qualify for it.
+ 
+                   </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <section class="bg-blue-800 py-20 px-4" >
+        <div class="container mx-auto text-center"  data-aos="fade-up-left">
+            <h2 class="text-4xl md:text-5xl font-bold  text-white mb-6"  style="color: white !important;">My Bank Account is Frozen Can Debt Collection Lawsuit Defense Help?</h2>
+
+            <p class=" text-stone-50 text-justify mt-4" style="color: white !important;">
+                ABSOLUTELY!  If there is a judgment against you, a lien can be placed against your property without being given any further notice.   If the judgment causing the property lien was entered against you by way of default, we might be able to vacate the judgment and remove the lien.  That means if you were sued but weren’t served and therefore didn’t even know about the lawsuit, we may be able to fight the judgment and get it removed – along with the lien.  If the judgment is valid and you were served correctly but didn’t defend yourself or did defend and lost the case, then we can still help in other ways. 
+            </p>
+            <p class=" text-stone-50 text-justify mt-4" style="color: white !important;">
+                If there is a lien on your property, most times, we can settle the lien for less than the amount owed – before you try to sell or refinance, helping save thousands of dollars of your equity.  Once you pay off the negotiated amount, we will obtain an Order of Lien Release for you, which removes the lien from your property.   If you do not have the funds to settle in advance of your sale or refinance, we can even help you work out a payment plan or file for bankruptcy if you qualify for it.
+            </p>
+
+        </div>
+    </section>
+
+    <section class=" py-20 px-4" >
+        <div class="container mx-auto text-center" data-aos="fade-up-right">
+            <h2 class="text-4xl md:text-5xl font-bold  text-white mb-6"  >If you get served with a debt collection lawsuit, don’t panic. </h2>
+
+            <p class=" text-stone-50 text-justify mt-4" >
+                The summons and complaint you receive may often have a date on it that is already several weeks or months old.  Do not worry as the date you see is not the date from which the clock starts counting for you to submit a written answer to the court.  Typically when a debt collection law firm sues someone, they do not take a physical trip to the court each day to file their case or cases and purchase their index number then, but instead, make one trip every few weeks or sometimes months and buy a bunch of index numbers in bulk at one time.  Then over the upcoming weeks or months, they complete each lawsuit and index number with the information of the alleged debtor they are going to sue.  If you see an older date that is weeks or months before actually receiving the summons and complaint, all that means is the date the index number was purchased from the court an means nothing for your purposes.  The clock starts counting for your 20-30 days the day you receive the summons and complaint.
+            </p>
+
+            <span class="block mt-14 text-blue-600 text-2xl font-bold">You Still Have Time!</span>
+
+            
+            <div class="flex justify-center mt-12 md:mt-12">
+                <a class="flex mx-auto btn-solid-lg" href="{{ route('cta') }}">Book A Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-blue-800 py-20 px-4" >
+        <div class="container mx-auto text-center" data-aos="fade-up-right">
+            <h2 class="text-4xl md:text-5xl font-bold  text-white mb-6"  style="color: white !important;">Our Client Service Representatives Deal on a One-on-One Basis </h2>
+
+            <p class=" text-stone-50 text-justify mt-4" style="color: white !important;">
+                This means you will speak to the same person each time, should you need to contact us.  The representative that explains everything to you is the one that you will remain in contact with and will be up to date on your case.  This further ensures that they will do their best to tell you everything possible in store ahead in order to manage your expectations of whatever process it is that you choose to retain us for as you will build a relationship over time with the same person.  Our employee retention ratio is near 100% so the likelihood of your personal representative even leaving us is slim.  We have happy employees here and happy employees make for happy clients!
+            </p>
+
+            <p class=" text-stone-50 text-justify mt-4" style="color: white !important;">
+               It is for these reasons among others we urge you to call for a free consultation.  It will not only save you the time of reading but also potentially from misinterpreting any of the information on our site.  If you are unable to call now and want to continue trying to figure this out on your own, please by all means, continue reading further.
+            </p>
+
+            
+        </div>
+    </section>
+
+
     <!-- Process Section -->
+   
     <section class="bg-primary py-16 px-4">
         <div class="container mx-auto">
             <div class="text-center mb-12">
