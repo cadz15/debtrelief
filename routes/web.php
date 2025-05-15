@@ -29,6 +29,12 @@ Route::group(['prefix' => 'service'], function () {
     Route::get('/debt-collection-defense', [HomeController::class, 'servicesDebtCollection'])->name('services.debt-collection');
     Route::get('/mortgage-debt', [HomeController::class, 'servicesMortgageDebt'])->name('services.mortgage-debt');
     Route::get('/foreclosure-defense', [HomeController::class, 'servicesForeClosureDefense'])->name('services.foreclosure-defense');
+    Route::get('/fair-debt', [HomeController::class, 'servicesFairDebt'])->name('services.fair-debt');
+    Route::get('/student-loan', [HomeController::class, 'servicesStudentLoan'])->name('services.student-loan');
+    Route::get('/small-business', [HomeController::class, 'servicesSmallBusiness'])->name('services.small-business');
+    Route::get('/debt-consolidation', [HomeController::class, 'servicesDebtConsolidation'])->name('services.debt-consolidation');
+    Route::get('/debt-management', [HomeController::class, 'servicesDebtManagement'])->name('services.debt-management');
+    Route::get('/bankruptcy', [HomeController::class, 'serviceBankruptcy'])->name('services.bankruptcy');
 });
 
 Route::group(['prefix' => 'consultation'], function () {

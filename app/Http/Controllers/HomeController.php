@@ -110,4 +110,34 @@ class HomeController extends Controller
     {
         return view('services.foreclosure-defense');
     }
+
+    public function servicesFairDebt()
+    {
+        return view('services.fair-debt');
+    }
+
+    public function servicesStudentLoan()
+    {
+        return view('services.student-loan');
+    }
+
+    public function servicesSmallBusiness()
+    {
+        return view('services.small-business');
+    }
+
+    public function servicesDebtConsolidation()
+    {
+        return view('services.debt-consolidation');
+    }
+
+    public function servicesDebtManagement()
+    {
+        return view('services.debt-management');
+    }
+
+    public function serviceBankruptcy()
+    {
+        return view('services.bankruptcy');
+    }
 }

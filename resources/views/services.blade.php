@@ -100,7 +100,7 @@
                     <p class="text-gray-600 mb-4">
                         <span>The Fair Debt Collection Practices Act (FDCPA) governs how third-party debt collectors are allowed to communicate with you.&nbsp; When these debt collectors violate this law as they often do, we can make them pay – literally!&nbsp; <strong>You can get paid up to $1,000 and if we don’t win – we don’t charge you</strong>.</span>
                     </p>
-                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
+                    <a href="{{ route('services.fair-debt') }}" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
                 </div>
                 
                 <!-- Contracts & Agreements -->
@@ -112,7 +112,7 @@
                     <p class="text-gray-600 mb-4">
                         <span>If your grace period just ended, have just fallen behind on your loan payments, or are in default and dealing with collectors or lawsuits – we can help!&nbsp; <strong>WE OFFER IT ALL</strong>:&nbsp; <strong>Consolidation</strong>, <strong>Deferment</strong>, <strong>Forbearance</strong>, <strong>Debt Settlement</strong>, <strong>Forgiveness</strong>, <strong>Cancellation</strong>, <strong>Discharge</strong>,&nbsp; <strong>Bankruptcy</strong>.</span>
                     </p>
-                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
+                    <a href="{{ route('services.student-loan') }}" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
                 </div>
                 
                 <!-- Intellectual Property -->
@@ -124,7 +124,7 @@
                     <p class="text-gray-600 mb-4">
                         <span>Whether or not you need business debt relief, If your business isn’t being paid – we help collect.&nbsp; We offer <strong>Accounts Receivable Management</strong>, <strong>Pre-Lawsuit Debt Collection</strong>, <strong>Collection Lawsuits</strong>, &amp; <strong>Post Judgment Enforcement</strong>.&nbsp; You worked hard for your money – It’s time to get paid for it!</span>
                     </p>
-                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
+                    <a href="{{ route('services.small-business') }}" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
                 </div>
                 
                 <!-- Entertainment Law -->
@@ -136,7 +136,7 @@
                     <p class="text-gray-600 mb-4">
                         <span>If you’re on time with your debt payments, have good enough credit or, assets to use as collateral, you may be able to <strong>combine all your debts into one new loan at a lower interest rate</strong>.&nbsp; Through our network of lenders, we can try to help if you want to try to <strong>borrow your way out of debt</strong>.</span>
                     </p>
-                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
+                    <a href="{{ route('services.debt-consolidation') }}" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
                 </div>
                 
                 <!-- Compliance & Governance -->
@@ -148,7 +148,7 @@
                     <p class="text-gray-600 mb-4">
                         <span>Experiencing a financial hardship and haven’t fallen too far behind on your payments?&nbsp; A Debt Management Plan, <em>also known as Consumer Credit Counseling</em>, can help by <strong>combining all your debts into one monthly payment at lower interest rates</strong> to have you out of debt in 4 to 7 years.</span>
                     </p>
-                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
+                    <a href="{{ route('services.debt-management') }}" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
                 </div>
                 
                 <!-- Dispute Resolution -->
@@ -160,7 +160,7 @@
                     <p class="text-gray-600 mb-4">
                         <span>Bankruptcy is a last resort to help save you or your business from drowning in debt.&nbsp; For individuals, we offer <strong>Chapter 7 and Chapter 13 </strong>filings, and for businesses, we offer Chapter 7 and <strong>Chapter 11</strong>. We can help determine if you’re qualified and can get you the fresh start you’re looking for.</span>
                     </p>
-                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
+                    <a href="{{ route('services.bankruptcy') }}" class="btn-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition duration-300 inline-block">Learn More</a>
                 </div>
             </div>
         </div>
