@@ -70,7 +70,7 @@ class SiteContentController extends Controller
 
         if ($request->hasFile('video')) {
             $video = $request->file('video');
-            $fileName = 'video.' . $video->getClientOriginalExtension();
+            $fileName = 'video1.' . $video->getClientOriginalExtension();
 
             $path = storage_path('app/public/uploads/' . $fileName);
             if(Storage::exists($path)) {
