@@ -71,6 +71,7 @@ class SiteContentController extends Controller
             $video = $request->file('video');
             $fileName = 'video.' . $video->getClientOriginalExtension();
             $video->storeAs('uploads', $fileName, 'public');
+            dd($fileName);
         } else {
             $filename = null;
         }
@@ -90,6 +91,7 @@ class SiteContentController extends Controller
                 ])
             ]);
         }
+
 
         return redirect()->back()->with('success', 'Home video updated successfully.');
     }

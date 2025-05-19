@@ -43,7 +43,7 @@
         <style>
             /* Ensure font size classes work */
             .ql-size-small { font-size: 1rem !important; }
-            .ql-size-large { font-size: 1.7rem !important; }
+            .ql-size-large { font-size: 1.8rem !important; }
             .ql-size-huge { font-size: 2.5rem !important; }
 
             .ql-align-center { text-align: center !important; }
