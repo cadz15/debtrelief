@@ -19,6 +19,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+Route::domain('consolidate.localhost' )->group(function() {
+     Route::get('/', function () {
+        return view('sub.index');
+    });
+});
+
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaimer');
 Route::get('/our-services', [HomeController::class, 'services'])->name('services');
