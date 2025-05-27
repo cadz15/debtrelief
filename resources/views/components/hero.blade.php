@@ -7,7 +7,7 @@
         <div class="mb-4 md:mb-16 mt-8 md:mt-0 p-4 rounded-lg shadow-lg"
             style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);"
             data-aos="fade-right">
-            <div class="flex flex-col gap-y-2">
+            <div class="flex flex-col gap-y-2" id="hero-left-container">
                 {!! $hero !!}
             </div>
             <div class="w-full flex mt-8 justify-center">

@@ -36,7 +36,7 @@
                 @if(request()->routeIs('home'))
                 <a class="nav-link page-scroll" href="#services">Our Services</a>
                 @else
-                <a class="nav-link page-scroll" href="{{ route('services') }}#services">Our Services</a>
+                <a class="nav-link page-scroll" href="{{ route('home') }}#services">Our Services</a>
                 @endif
               </li>
               <li>

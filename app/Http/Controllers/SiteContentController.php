@@ -6,6 +6,7 @@ use App\Models\Faq;
 use App\Models\SiteContent;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\DataTables;
 
 class SiteContentController extends Controller
@@ -69,7 +70,13 @@ class SiteContentController extends Controller
 
         if ($request->hasFile('video')) {
             $video = $request->file('video');
-            $fileName = 'video.' . $video->getClientOriginalExtension();
+            $fileName = 'video1.' . $video->getClientOriginalExtension();
+
+            $path = storage_path('app/public/uploads/' . $fileName);
+            if(Storage::exists($path)) {
+                unlink($path);
+            }
+
             $video->storeAs('uploads', $fileName, 'public');
         } else {
             $filename = null;
@@ -90,6 +97,7 @@ class SiteContentController extends Controller
                 ])
             ]);
         }
+
 
         return redirect()->back()->with('success', 'Home video updated successfully.');
     }
