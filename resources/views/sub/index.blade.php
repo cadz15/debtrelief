@@ -639,9 +639,9 @@
     <!-- Footer -->
     <footer class="py-8 bg-gray-900 text-white">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center">
-                <div class="text-2xl font-bold text-white mb-4">FCA</div>
-                <div class="text-gray-400 text-sm">© 2023 FCA. All rights reserved.</div>
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-end">
+                <div class="text-2xl font-bold text-white mb-4 flex items-center gap-4"><img src="{{ route('getFile', $_siteSettings['logo']) }}" alt="{{ $_siteSettings['site_name'] }}" class="h-16" />FCA</div>
+                <div class="text-gray-400 text-sm">© {{ $_siteSettings['year']?? '' }} FCA. All rights reserved.</div>
             </div>
         </div>
     </footer>
