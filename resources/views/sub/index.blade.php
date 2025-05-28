@@ -20,7 +20,7 @@
     <!-- Webpage Title -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>FCA </title>
+    <title>FCA Student Loan Forgiveness </title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,7 +132,7 @@
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <img src="{{ route('getFile', $_siteSettings['logo']) }}" alt="{{ $_siteSettings['site_name'] }}" class="h-16" />
-                <div class="text-3xl font-bold ">FCA</div>
+                <div class="text-3xl font-bold ">FCA Student Loan Forgiveness</div>
             </div>
             <a href="tel:{{ $_siteSettings['phone'] }}" target="_blank" class="bg-blue-600 hover:bg-blue-900 text-white px-8 py-4 btn transition-colors duration-300">
                 {{ $_siteSettings['phone'] }}
@@ -270,14 +270,14 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4 py-12">
             <div class="text-center mb-12 flex gap-4 flex-col items-center">
-                <h3 class="text-xl uppercase font-semibold text-blue-600 mb-2">Welcome to FCA</h3>
+                <h3 class="text-xl uppercase font-semibold text-blue-600 mb-2">Welcome to FCA Student Loan Forgiveness</h3>
                 <h2 class="text-6xl mt-6 font-normal text-gray-900">Student loan consolidation expertise.</h2>
                 <p class="text-xl leading-[1.8] mt-6">Our team of experienced coaches specialize in student loan consolidation. We analyze your current loans with you, explore consolidation options, and tailor a plan that suits your financial situation. Our goal is to simplify the process, reduce your monthly payments, and improve your overall financial health.</p>
             </div>
             <div class="flex justify-center gap-6">
-                <button class="bg-blue-600 hover:bg-primary-700 text-white px-6 py-3 btn transition-colors duration-300">
+                <a href="{{ route('home') }}" class="bg-blue-600 hover:bg-primary-700 text-white px-6 py-3 btn transition-colors duration-300">
                     Learn More →
-                </button>
+                </a>
                 <button onclick="openModal()" class="bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 px-6 py-3 btn transition-colors duration-300">
                     Get Started Today!
                 </button>
@@ -290,9 +290,9 @@
         <div class="container mx-auto px-4 flex flex-col py-12 pb-20">
             <div class="flex justify-between items-center">
                 <h2 class="text-6xl w-1/3 text-white mb-12">Personalized coaching sessions.</h2>
-                <button onclick="openModal()" class="hidden md:block w-fit h-fit border-2 border-gray-300 hover:bg-primary-700 text-white px-6 py-3 btn transition-colors duration-300">
+                <a href="{{ route('home') }}" class="hidden md:block w-fit h-fit border-2 border-gray-300 hover:bg-primary-700 text-white px-6 py-3 btn transition-colors duration-300">
                         Learn More →
-                </button>
+                </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white shadow-md p-8 card">
@@ -396,7 +396,7 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 text-center">
-                    <a href="https://www.google.com/search?q=FCA+student+loans+reviews" target="_blank" class="inline-flex items-center bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 px-6 py-3 btn transition-colors duration-300">
+                    <a href="https://www.google.com/search?q=FCA+student+loans+forgiveness+reviews" target="_blank" class="inline-flex items-center bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 px-6 py-3 btn transition-colors duration-300">
                         <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.441 16.892c-2.102.144-6.784.144-8.883 0-2.276-.156-2.541-1.27-2.558-4.892.017-3.629.285-4.736 2.558-4.892 2.104-.144 6.782-.144 8.883 0 2.277.156 2.541 1.27 2.559 4.892-.018 3.629-.285 4.736-2.559 4.892zm-6.441-7.234l4.917 2.338-4.917 2.346v-4.684z"/>
                         </svg>
@@ -449,7 +449,7 @@
                 <div class="lg:w-1/3">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4">Real relief. Real results.</h2>
                     <p class="text-gray-600 mb-6">Don't just take our word for it. See what our clients have to say about their experience with FCA.</p>
-                    <a href="https://www.google.com/search?q=FCA+student+loans+reviews" target="_blank" class="inline-flex items-center bg-blue-600 hover:bg-primary-700 text-white px-6 py-3 btn transition-colors duration-300">
+                    <a href="https://www.google.com/search?q=FCA+student+loans+forgiveness+reviews" target="_blank" class="inline-flex items-center bg-blue-600 hover:bg-primary-700 text-white px-6 py-3 btn transition-colors duration-300">
                         <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.441 16.892c-2.102.144-6.784.144-8.883 0-2.276-.156-2.541-1.27-2.558-4.892.017-3.629.285-4.736 2.558-4.892 2.104-.144 6.782-.144 8.883 0 2.277.156 2.541 1.27 2.559 4.892-.018 3.629-.285 4.736-2.559 4.892zm-6.441-7.234l4.917 2.338-4.917 2.346v-4.684z"/>
                         </svg>
