@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\SiteContentController;
+use App\Http\Controllers\SubLeadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,9 +23,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::domain('consolidate.localhost' )->group(function() {
-     Route::get('/', function () {
-        return view('sub.index');
-    });
+    Route::get('/', [SubLeadController::class, 'index']);
+    Route::post('/', [SubLeadController::class, 'store'])->name('sub.cta');
 });
 
 
@@ -82,6 +82,9 @@ Route::group(['prefix' => '/admin', 'middleware' => ['auth']], function () {
 
     Route::get('/leads', [LeadController::class, 'leads'])->name('admin.leads');
     Route::post('/leads', [LeadController::class, 'list'])->name('admin.leads.list');
+
+    Route::get('/sub/leads', [LeadController::class, 'subLeads'])->name('admin.sub.leads');
+    Route::post('/sub/leads', [LeadController::class, 'subLeadList'])->name('admin.sub.leads.list');
 
     Route::get('/disclaimer', [SiteContentController::class, 'disclaimer'])->name('admin.disclaimer');
     Route::post('/disclaimer', [SiteContentController::class, 'updateDisclaimer'])->name('admin.disclaimer.update');

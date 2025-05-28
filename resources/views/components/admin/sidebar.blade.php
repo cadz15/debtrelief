@@ -383,6 +383,29 @@
          </a>
        </li>
 
+       <li>
+         <a
+           href="{{ route('admin.sub.leads') }}"
+           class="menu-item group @if(request()->routeIs('admin.sub.leads')) menu-item-active @else menu-item-inactive @endif"
+         >
+           <img
+             class="@if(request()->routeIs('admin.sub.leads')) menu-item-active @else menu-item-inactive @endif"
+             width="22"
+             height="22"
+             src= "https://www.svgrepo.com/show/446101/user-data.svg"
+           >
+            
+           </img>
+
+           <span
+             class="menu-item-text"
+             :class="sidebarToggle ? 'lg:hidden' : ''"
+           >
+             Sub Domain Leads
+           </span>
+         </a>
+       </li>
+
 
 
        <li>
