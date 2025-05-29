@@ -334,7 +334,7 @@
                     <div class="flex items-center flex-col gap-4">
                         <img src="{{ route('getFile', $_siteSettings['logo']) }}" class="w-1/6" alt="">
                         <h3 class="text-2xl text-gray-900 mb-4">$50,000 in Debt</h3>
-                        <h3 class="text-4xl text-blue-700 mb-4">without FCA </h3>
+                        <h3 class="text-4xl text-blue-700 mb-4">with FCA </h3>
                     </div>
                     <div class="border-t my-8 border-gray-300 my-4"></div>
                     <ul class="space-y-6 mb-6">
