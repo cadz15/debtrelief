@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::domain('consolidate.'. env('APP_URL') )->group(function() {
+Route::domain('consolidate.fcanationalservice.org' )->group(function() {
     Route::get('/', [SubLeadController::class, 'index'])->name('sub.home');
     Route::post('/', [SubLeadController::class, 'store'])->name('sub.cta');
 });
