@@ -27,7 +27,7 @@ Route::domain('consolidate.fcanationalservice.org' )->group(function() {
     Route::post('/', [SubLeadController::class, 'store'])->name('sub.cta');
 });
 
-Route::domain(env('APP_URL'))->group(function() {
+Route::domain('https://fcanationalservice.org')->group(function() {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaimer');
