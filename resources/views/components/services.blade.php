@@ -15,7 +15,7 @@
             
         </div>
 
-        <div class="flex flex-row  gap-4">
+        <div class="flex flex-col md:flex-row  gap-4">
             
             <div class="w-full flex flex-col py-12 gap-y-4 md:w-1/3  text-center items-center bg-gray rounded-lg" data-aos="zoom-in-up">
                 <img
