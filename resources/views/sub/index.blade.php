@@ -275,7 +275,7 @@
                 <p class="text-xl leading-[1.8] mt-6">Our team of experienced coaches specialize in student loan consolidation. We analyze your current loans with you, explore consolidation options, and tailor a plan that suits your financial situation. Our goal is to simplify the process, reduce your monthly payments, and improve your overall financial health.</p>
             </div>
             <div class="flex justify-center gap-6">
-                <a href="https://www.fcanationalservice.org/" class="bg-blue-600 hover:bg-primary-700 text-white px-6 py-3 btn transition-colors duration-300">
+                <a href="https://fcanationalservice.org/" class="bg-blue-600 hover:bg-primary-700 text-white px-6 py-3 btn transition-colors duration-300">
                     Learn More →
                 </a>
                 <button onclick="openModal()" class="bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 px-6 py-3 btn transition-colors duration-300">
@@ -290,7 +290,7 @@
         <div class="container mx-auto px-4 flex flex-col py-12 pb-20">
             <div class="flex justify-between items-center">
                 <h2 class="text-6xl w-1/3 text-white mb-12">Personalized coaching sessions.</h2>
-                <a href="https://www.fcanationalservice.org/" class="hidden md:block w-fit h-fit border-2 border-gray-300 hover:bg-primary-700 text-white px-6 py-3 btn transition-colors duration-300">
+                <a href="https://fcanationalservice.org/" class="hidden md:block w-fit h-fit border-2 border-gray-300 hover:bg-primary-700 text-white px-6 py-3 btn transition-colors duration-300">
                         Learn More →
                 </a>
             </div>
