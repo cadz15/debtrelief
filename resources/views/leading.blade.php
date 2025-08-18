@@ -150,7 +150,7 @@
                             </div>
                             <div>
                                 <fieldset class="fieldset">
-                                    <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">First Name <span class="text-red-500 text-sm">*</span></legend>
+                                    <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">First Name</legend>
                                     <input type="text" required  class="input w-full text-lg" id="firstName" name="first_name" 
                                     value="{{ old('first_name', '') }}"/>
                                   </fieldset>
@@ -159,7 +159,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Last Name <span class="text-red-500 text-sm">*</span></legend>
+                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Last Name</legend>
                                 <input type="text" required  class="input w-full text-lg" id="lastName" name="last_name" 
                                 value="{{ old('last_name', '') }}"/>
                                 @error('last_name')
@@ -167,7 +167,7 @@
                                 @enderror
                             </div>
                             <div >
-                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Address <span class="text-red-500 text-sm">*</span></legend>
+                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Address</legend>
                                 <input type="text" required  class="input w-full text-lg" id="address" name="address" 
                                 value="{{ old('address', '') }}"/>
                                 @error('address')
@@ -175,7 +175,7 @@
                             @enderror
                             </div>
                             <div>
-                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Phone <span class="text-red-500 text-sm">*</span></legend>
+                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Phone</legend>
                                 <input type="text" required  class="input w-full text-lg" id="phoneNumber" name="phone_number" 
                                 value="{{ old('phone_number', '') }}"/>
                                 @error('phone_number')
@@ -183,7 +183,7 @@
                                 @enderror
                             </div>
                             <div>
-                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Email <span class="text-red-500 text-sm">*</span></legend>
+                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Email</legend>
                                 <input type="email"  required class="input w-full text-lg" id="email" name="email" 
                                 value="{{ old('email', '') }}"/>
                                 @error('email')
