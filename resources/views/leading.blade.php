@@ -166,14 +166,6 @@
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div>
-                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Phone</legend>
-                                <input type="text" required  class="input w-full text-lg" id="phoneNumber" name="phone_number" 
-                                value="{{ old('phone_number', '') }}"/>
-                                @error('phone_number')
-                                    <span class="text-red-500 text-sm">{{ $message }}</span>
-                                @enderror
-                            </div>
                             <div >
                                 <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Address</legend>
                                 <input type="text" required  class="input w-full text-lg" id="address" name="address" 
@@ -183,10 +175,25 @@
                             @enderror
                             </div>
                             <div>
+                                <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Phone</legend>
+                                <input type="text" required  class="input w-full text-lg" id="phoneNumber" name="phone_number" 
+                                value="{{ old('phone_number', '') }}"/>
+                                @error('phone_number')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div>
                                 <legend class="fieldset-legend text-lg text-gray-500 font-normal text-left">Email</legend>
                                 <input type="email"  required class="input w-full text-lg" id="email" name="email" 
                                 value="{{ old('email', '') }}"/>
                                 @error('email')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="text-xl text-blue-900 font-bold mb-3">
+                                <input class="checkbox checkbox-primary " type="checkbox" name="opt_in" required value="opt_in" id="opt_in" >
+                                <label for="opt_in" class="cursor-pointer text-sm">{{ $formData?->term_disclaimer ?? ''  }}</label>
+                                @error('opt_in')
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -195,10 +202,10 @@
                         <div class="mt-5 w-1/2 mx-auto">
                             <button type="submit" class="btn btn-primary rounded-3xl w-full">Submit</button>
                         </div>
-                        <div  class="gap-2 items-center flex mt-12">
+                        <!-- <div  class="gap-2 items-center flex mt-12">
                             {{-- <input class="checkbox checkbox-primary checkbox-sm" type="checkbox" name="debts[]" value="Other Debts" id="confirm"> --}}
                             <label for="confirm" class="text-sm font-normal text-gray-500">{{ $formData?->term_disclaimer ?? ''  }}</label>
-                        </div>
+                        </div> -->
                     </div>
 
                     @if(Session::has('success'))
