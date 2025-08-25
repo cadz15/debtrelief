@@ -30,7 +30,7 @@ Route::domain('consolidate.fcanationalservice.org' )->group(function() {
 Route::domain('https://fcanationalservice.org')->group(function() {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaimer');
+    Route::get('/terms-of-use', [HomeController::class, 'disclaimer'])->name('disclaimer');
     Route::get('/privacy-policy', [HomeController::class, 'disclaimer'])->name('privacy.policy');
     Route::get('/our-services', [HomeController::class, 'services'])->name('services');
     
