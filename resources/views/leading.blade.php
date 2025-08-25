@@ -192,8 +192,15 @@
                             </div>
                             <div class="text-xl text-blue-900 font-bold mb-3">
                                 <input class="checkbox checkbox-primary " type="checkbox" name="opt_in" required value="opt_in" id="opt_in" >
-                                <label for="opt_in" class="cursor-pointer text-sm">{{ $formData?->term_disclaimer ?? ''  }}</label>
+                                <label for="opt_in" class="cursor-pointer text-sm text-left">{{ $formData?->term_disclaimer ?? ''  }}</label>
                                 @error('opt_in')
+                                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="text-xl text-blue-900 font-bold mb-3">
+                                <input class="checkbox checkbox-primary " type="checkbox" name="opt_in2" required value="opt_in2" id="opt_in2" >
+                                <label for="opt_in2" class="cursor-pointer text-sm text-left">By checking this box, I consent to receive marketing and promotional messages, including special offers, discounts, new product updates among others. Message frequency may vary. Message & Data rates may apply. Reply HELP for help or STOP to opt-out.</label>
+                                @error('opt_in2')
                                     <span class="text-red-500 text-sm">{{ $message }}</span>
                                 @enderror
                             </div>

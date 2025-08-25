@@ -80,6 +80,11 @@ class HomeController extends Controller
     return view('disclaimer', compact('disclaimer'));
     }
 
+    public function privacy()
+    {
+        return view('policy');
+    }
+
 
     public function services()
     {

@@ -10,9 +10,8 @@
 <div class="copyright">
     <div class="container px-4 sm:px-8 flex md:flex-row flex-col justify-between ">
         <ul class="mb-4 list-unstyled p-small">
-            @if(!request()->routeIs('cta'))
-            <li class="mb-2"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
-            @endif
+            <li class="mb-2"><a href="{{ route('disclaimer') }}">Terms Of Use</a></li>
+            <li class="mb-2"><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
         </ul>
         <span class="pb-2 p-small font-semibold statement">Copyright © <a href="" class="no-underline">{{ $_siteSettings['year']?? '' }} {{ $_siteSettings['site_name'] ?? '' }}</a></span>
         <p class="mb-4 list-unstyled p-small flex lg:flex-col flex-row">
@@ -22,13 +21,6 @@
     </div> 
 
 
-    @if(request()->routeIs('cta'))
-        <div class="container py-4 pt-12">
-            <div class="flex flex-col gap-y-2 ">
-                {!! $disclaimer?? '' !!}
-            </div>
-        </div>
-    @endif
 <!-- end of container -->
 </div> <!-- end of copyright -->
 <!-- end of copyright -->

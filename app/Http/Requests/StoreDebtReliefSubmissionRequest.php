@@ -44,7 +44,8 @@ class StoreDebtReliefSubmissionRequest extends FormRequest
             ],
             'address' => 'required|string',
             'email' => 'required|email|max:255',
-            'opt_in' => 'required|string'
+            'opt_in' => 'required|string',
+            'opt_in2' => 'required|string'
         ];
     }
 }
