@@ -10,7 +10,7 @@
             
             <section>
                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-4">Introduction</h2>
-                <p>FCA National Service.org DEBT RELIEF (“FCA National Service.org DEBT RELIEF”, “we” or “us”) is sensitive to concerns that personal information collected from its customers (“you” or “your”) be handled respectfully and appropriately.</p>
+                <p>FCA National Service.org (“FCA National Service.org”, “we” or “us”) is sensitive to concerns that personal information collected from its customers (“you” or “your”) be handled respectfully and appropriately.</p>
                 <p>This Privacy Policy (the “Policy”) discloses the privacy practices for the Site and applies solely to information collected by the website <a href="https://fcanationalservice.org/" class="text-blue-600">https://fcanationalservice.org/</a> including any related domains and sub-domains (the “Site”).</p>
                 <p>This Policy is intended to notify you of the following:</p>
                 <ul class="list-disc pl-5 space-y-1">
