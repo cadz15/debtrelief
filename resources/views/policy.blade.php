@@ -3,7 +3,7 @@
 @section('title', 'Privacy Policy')
 
 @section('content')
-    <div class="container mx-auto px-5 py-20 max-w-4xl">
+    <div class="container mx-auto px-5 py-20 max-w-4xl mt-8">
         <h1 class="text-4xl font-bold text-gray-900 mb-10">Privacy Policy</h1>
 
         <article class="prose prose-lg prose-gray max-w-none space-y-8">
@@ -22,7 +22,7 @@
             </section>
 
             <section>
-                <h2 class="text-2xl font-semibold text-gray-800">What Information Is Collected?</h2>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">What Information Is Collected?</h2>
                 
                 <h3 class="text-xl font-semibold text-gray-800">Internet Traffic Data</h3>
                 <p>Internet traffic data includes but is not limited to Internet service provider information, collection of IP addresses, entry and exit pages, various operating systems, and other such information. We collect no personally identifying information through this process, and it is used to help analyze user traffic with respect to various services available through the Site to allow for a more customized and enjoyable user experience.</p>
@@ -94,9 +94,6 @@
                 <p>If you have any questions about this Privacy Policy, you may contact us via email at <a href="mailto:support@fcanationalservice.org" class="text-blue-600">support@fcanationalservice.org</a>.</p>
             </section>
 
-            <footer class="mt-10 text-center text-sm text-gray-500">
-                <p>&copy; 2025 FCA National Service.org DEBT RELIEF</p>
-            </footer>
         </article>
     </div>
 @endsection
