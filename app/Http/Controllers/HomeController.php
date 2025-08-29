@@ -89,7 +89,7 @@ class HomeController extends Controller
         } else {
             $disclaimer = '';
         }
-    return view('disclaimer', compact('disclaimer'));
+    return view('terms', compact('disclaimer'));
     }
 
     public function privacy()
