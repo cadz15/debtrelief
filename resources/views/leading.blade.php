@@ -214,7 +214,7 @@
                             <hr>
 
                             <div class=" text-blue-900 text-sm mb-4 mt-4">
-                                You may also read our <a href="{{ route('disclaimer') }}" target="_blank" class="font-bold"><u>Terms Of Use</u></a> and <a href="{{ route('privacy.policy') }}" target="_blank" class="font-bold"><u>Privacy Policy</u></a>
+                                You may also read our <a href="{{ route('terms.use') }}" target="_blank" class="font-bold"><u>Terms Of Use</u></a> and <a href="{{ route('privacy.policy') }}" target="_blank" class="font-bold"><u>Privacy Policy</u></a>
                             </div>
                         <div class="mt-5 w-1/2 mx-auto">
                             <button type="submit" class="btn btn-primary rounded-3xl w-full">Submit</button>

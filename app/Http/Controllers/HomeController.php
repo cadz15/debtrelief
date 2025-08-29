@@ -80,6 +80,18 @@ class HomeController extends Controller
     return view('disclaimer', compact('disclaimer'));
     }
 
+    // cms disclaimer
+    public function terms()
+    {
+        $siteContent = SiteContent::where('page_type', 'disclaimer')->first();
+        if ($siteContent) {
+            $disclaimer = json_decode($siteContent->content)->data ?? '';
+        } else {
+            $disclaimer = '';
+        }
+    return view('disclaimer', compact('disclaimer'));
+    }
+
     public function privacy()
     {
         return view('policy');

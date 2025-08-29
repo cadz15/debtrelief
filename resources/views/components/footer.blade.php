@@ -10,8 +10,9 @@
 <div class="copyright">
     <div class="container px-4 sm:px-8 flex md:flex-row flex-col justify-between ">
         <ul class="mb-4 list-unstyled p-small">
-            <li class="mb-2"><a href="{{ route('disclaimer') }}">Terms Of Use</a></li>
+            <li class="mb-2"><a href="{{ route('terms.use') }}">Terms Of Use</a></li>
             <li class="mb-2"><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
+            <li class="mb-2"><a href="{{ route('disclaimer') }}">Disclaimer</a></li>
         </ul>
         <span class="pb-2 p-small font-semibold statement">Copyright © <a href="" class="no-underline">{{ $_siteSettings['year']?? '' }} {{ $_siteSettings['site_name'] ?? '' }}</a></span>
         <p class="mb-4 list-unstyled p-small flex lg:flex-col flex-row">
