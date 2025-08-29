@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\contact;
 use App\Models\Faq;
 use App\Models\SiteContent;
 use App\Models\Testimonial;
@@ -156,5 +157,30 @@ class HomeController extends Controller
     public function serviceBankruptcy()
     {
         return view('services.bankruptcy');
+    }
+
+    public function contactus() 
+    {
+        return  view('contactus');
+    }
+
+    public function storeContact(Request $request) {
+        $validate = $request->validate([
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'phone_number' => ['required'],
+            'email' => ['required'],
+            'opt_1' => ['required'],
+            'opt_2' => ['required'],
+        ]);
+
+        contact::create([
+            'first_name' => $validate['first_name'],
+            'last_name' => $validate['last_name'],
+            'phone_number' => $validate['phone_number'],
+            'email' => $validate['email'],
+        ]);
+
+        return view('contactus')->with('Success', 'Thank you!');
     }
 }

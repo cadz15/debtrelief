@@ -53,6 +53,14 @@
                 <a class="nav-link page-scroll" href="{{ route('home') }}#faq">FAQ's</a>
                 @endif
               </li>
+
+              <li>
+                @if(request()->routeIs('contactus'))
+                <a class="nav-link page-scroll text-rose-600" href="{{ route('contactus')}}">Contact Us</a>
+                @else
+                <a class="nav-link page-scroll" href="{{ route('contactus')}}">Contact Us</a>
+                @endif
+              </li>
               
               @endif
           </ul>

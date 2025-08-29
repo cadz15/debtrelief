@@ -27,7 +27,8 @@ Route::domain('consolidate.fcanationalservice.org' )->group(function() {
     Route::post('/', [SubLeadController::class, 'store'])->name('sub.cta');
 });
 
-Route::domain('https://fcanationalservice.org')->group(function() {
+// Route::domain('https://fcanationalservice.org')->group(function() {
+Route::domain('localhost')->group(function() {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/terms-of-use', [HomeController::class, 'terms'])->name('terms.use');
@@ -35,6 +36,9 @@ Route::domain('https://fcanationalservice.org')->group(function() {
     Route::get('/disclaimer', [HomeController::class, 'disclaimer'])->name('disclaimer');
     Route::get('/our-services', [HomeController::class, 'services'])->name('services');
     
+    Route::get('/contact-us', [HomeController::class, 'contactus'])->name('contactus');
+    Route::post('/contact-us', [HomeController::class, 'storeContact'])->name('contactus.store');
+
     Route::group(['prefix' => 'service'], function () {    
         Route::get('/consumer-debt', [HomeController::class, 'servicesConsumerDebt'])->name('services.consumer-debt');
         Route::get('/business-debt', [HomeController::class, 'servicesBusinessDebt'])->name('services.business-debt');
