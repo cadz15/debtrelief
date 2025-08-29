@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDebtReliefSubmissionRequest;
+use App\Models\contact;
 use App\Models\Lead;
 use App\Models\SiteContent;
 use App\Models\SubLead;
@@ -73,6 +74,27 @@ class LeadController extends Controller
                 return is_array($lead->debts)
                 ? implode(', ', $lead->debts)
                 : implode(', ', json_decode($lead->debts ?? '[]', true));
+            })
+            ->make(true);
+    }
+
+
+    public function contactLeads()
+    {
+        return view('admin.contact-us-leads');
+    }
+
+    public function contactList()
+    {
+        $data = contact::query();
+
+
+        return DataTables::eloquent($data)
+            ->order(function($query) {
+                $query->orderBy('created_at', 'desc');
+            })
+            ->addColumn('date', function ($lead) {
+                return Carbon::parse($lead->created_at)->format('F d, Y');
             })
             ->make(true);
     }

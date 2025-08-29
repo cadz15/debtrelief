@@ -362,6 +362,28 @@
 
        <li>
          <a
+           href="{{ route('admin.contact.leads') }}"
+           class="menu-item group @if(request()->routeIs('admin.contact.leads')) menu-item-active @else menu-item-inactive @endif"
+         >
+           <img
+             class="@if(request()->routeIs('admin.contact.leads')) menu-item-active @else menu-item-inactive @endif"
+             width="22"
+             height="22"
+             src= "https://www.svgrepo.com/show/446101/user-data.svg"
+           >
+            
+           </img>
+
+           <span
+             class="menu-item-text"
+             :class="sidebarToggle ? 'lg:hidden' : ''"
+           >
+             Contact Us Leads
+           </span>
+         </a>
+       </li>
+       <li>
+         <a
            href="{{ route('admin.leads') }}"
            class="menu-item group @if(request()->routeIs('admin.leads')) menu-item-active @else menu-item-inactive @endif"
          >

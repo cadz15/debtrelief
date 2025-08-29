@@ -88,6 +88,9 @@ Route::domain('https://fcanationalservice.org')->group(function() {
     
         Route::get('/leads', [LeadController::class, 'leads'])->name('admin.leads');
         Route::post('/leads', [LeadController::class, 'list'])->name('admin.leads.list');
+
+        Route::get('/contact-leads', [LeadController::class, 'contactLeads'])->name('admin.contact.leads');
+        Route::post('/contact-leads', [LeadController::class, 'contactList'])->name('admin.contact.leads.list');
     
         Route::get('/sub/leads', [LeadController::class, 'subLeads'])->name('admin.sub.leads');
         Route::post('/sub/leads', [LeadController::class, 'subLeadList'])->name('admin.sub.leads.list');
