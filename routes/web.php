@@ -27,8 +27,8 @@ Route::domain('consolidate.fcanationalservice.org' )->group(function() {
     Route::post('/', [SubLeadController::class, 'store'])->name('sub.cta');
 });
 
-// Route::domain('https://fcanationalservice.org')->group(function() {
-Route::domain('localhost')->group(function() {
+Route::domain('https://fcanationalservice.org')->group(function() {
+// Route::domain('localhost')->group(function() {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/terms-of-use', [HomeController::class, 'terms'])->name('terms.use');
