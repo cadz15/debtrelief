@@ -6,7 +6,10 @@ use App\Models\contact;
 use App\Models\Faq;
 use App\Models\SiteContent;
 use App\Models\Testimonial;
+use Carbon\Carbon;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -174,12 +177,37 @@ class HomeController extends Controller
             'opt_2' => ['required'],
         ]);
 
-        contact::create([
+       $contactData = contact::create([
             'first_name' => $validate['first_name'],
             'last_name' => $validate['last_name'],
             'phone_number' => $validate['phone_number'],
             'email' => $validate['email'],
         ]);
+
+        try
+        {
+            $responses = Http::post(env('GOOGLE_SHEET_POST'), [
+                'first_name' => $contactData?->first_name,
+                'last_name' => $contactData?->last_name,
+                'email' => $contactData?->email,
+                'phone_number' => $contactData?->phone_number,
+                'date' => Carbon::parse($contactData?->created_at)->format('M d, Y')
+            ]);
+
+            // Check if the request was successful
+        if ($responses->successful()) {
+            // You can log the response or do further processing
+            return view('contactus')->with('Success', 'Thank you!');
+        } else {
+            // Handle the error case
+           return view('contactus')->with('Error', 'Error on Submitting to google sheet');
+        }
+            
+        }catch(Exception $e) {
+
+           
+        }
+
 
         return view('contactus')->with('Success', 'Thank you!');
     }
