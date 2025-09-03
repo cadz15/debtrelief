@@ -186,7 +186,6 @@ class HomeController extends Controller
 
         try
         {
-            dd(env('APP_URL'));
             $responses = Http::post(env('GOOGLE_SHEET_POST'), [
                 'first_name' => $contactData?->first_name,
                 'last_name' => $contactData?->last_name,
