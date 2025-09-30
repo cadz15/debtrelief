@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\SiteContentController;
+use App\Http\Controllers\SubDomainController;
 use App\Http\Controllers\SubLeadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::domain('paraquatintakeform.fcanationalservice.org')->group(function() {
+    Route::get('/', [SubDomainController::class, 'paraquatIndex'])->name('paraquat.index');
+});
+
+Route::domain('roundupintakeform.fcanationalservice.org')->group(function() {
+    Route::get('/', [SubDomainController::class, 'roundUpIndex'])->name('roundup.index');
+});
 
 Route::domain('consolidate.fcanationalservice.org' )->group(function() {
     Route::get('/', [SubLeadController::class, 'index'])->name('sub.home');
