@@ -312,16 +312,20 @@
                         <h3 class="text-2xl font-bold mb-6 text-center">Check Your Eligibility</h3>
                         <form class="space-y-4" id="eligibilityForm">
                             <div class="form-field">
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                                <label for="first_name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                <input type="text" id="first_name" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                            </div>
+                            <div class="form-field">
+                                <label for="last_name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                <input type="text" id="last_name" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
                             </div>
                             <div class="form-field">
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
                                 <input type="email" id="email" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
                             </div>
                             <div class="form-field">
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                                <label for="phone_1" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                                <input type="tel" id="phone_1" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
                             </div>
                             <div class="form-field">
                                 <label for="exposure" class="block text-sm font-medium text-gray-700 mb-1">How were you exposed to Paraquat?</label>
