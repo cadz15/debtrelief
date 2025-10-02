@@ -385,7 +385,7 @@
     <!-- CTA Form Section -->
     <section id="cta-form" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4 md:px-6">
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+            <div class=" mx-auto grid md:grid-cols-2 gap-12">
                 <div class="fade-in">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">Time is Running Out—File Your Claim Today!</h2>
                     <p class="text-gray-600 mb-6">Statutes of limitations vary by state. Complete this form for a free, no-obligation case evaluation.</p>
@@ -405,32 +405,135 @@
                     </ul>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-md fade-in">
-                    <form id="eligibilityForm">
-                        <div class="mb-4 form-field">
-                            <label class="block text-gray-700 mb-2">Full Name</label>
-                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300">
-                        </div>
-                        <div class="mb-4 form-field">
-                            <label class="block text-gray-700 mb-2">Email Address</label>
-                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300">
-                        </div>
-                        <div class="mb-4 form-field">
-                            <label class="block text-gray-700 mb-2">Phone Number</label>
-                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300">
-                        </div>
-                        <div class="mb-6 form-field">
-                            <label class="block text-gray-700 mb-2">How were you exposed to Roundup?</label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300">
-                                <option>Select an option</option>
-                                <option>Professional use (farmer, landscaper)</option>
-                                <option>Home/garden use</option>
-                                <option>Other exposure</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full bg-primary hover:bg-emerald-600 text-white font-bold py-4 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
-                            Submit for Free Case Review
-                        </button>
-                    </form>
+                    <form method="post" class="space-y-4" id="eligibilityForm">
+                            @csrf
+                            <div class="form-field">
+                                <label for="exposed_loved_one_prq" class="block text-sm font-medium text-gray-700 mb-1">Is the affected individual you or a loved one? <span class="text-red-600">*</span></label>
+                                <select id="exposed_loved_one_prq" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                                    <option value="">Select an option</option>
+                                    <option value="my-self">My Self</option>
+                                    <option value="loved-one">Loved One</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="exposed_to_weed_grass_killer_roundup_prq" class="block text-sm font-medium text-gray-700 mb-1">Is the affected individual you or a loved one? <span class="text-red-600">*</span></label>
+                                <select id="exposed_to_weed_grass_killer_roundup_prq" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                                    <option value="">Select an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="diagnosed_with_prq" class="block text-sm font-medium text-gray-700 mb-1">Have you or a loved one been diagnosed with? <span class="text-red-600">*</span></label>
+                                <select id="diagnosed_with_prq" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                                    <option value="">Select an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="what_year_diagnosed_prq" class="block text-sm font-medium text-gray-700 mb-1">What year were you or a loved one diagnosed? <span class="text-red-600">*</span></label>
+                                <input type="number" id="what_year_diagnosed_prq" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                            </div>
+                            <div class="form-field">
+                                <label for="proof_prq" class="block text-sm font-medium text-gray-700 mb-1">Can you provide proof of your diagnostic? <span class="text-red-600">*</span></label>
+                                <select id="proof_prq" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                                    <option value="">Select an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="have_lawyer_representing_prq" class="block text-sm font-medium text-gray-700 mb-1">Do you currently have a lawyer representing your claim? <span class="text-red-600">*</span></label>
+                                <select id="have_lawyer_representing_prq" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                                    <option value="">Select an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="provide_photo_id_prq" class="block text-sm font-medium text-gray-700 mb-1">Can you provide photo ID? <span class="text-red-600">*</span></label>
+                                <select id="provide_photo_id_prq" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                                    <option value="">Select an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="first_name" class="block text-sm font-medium text-gray-700 mb-1">First Name <span class="text-red-600">*</span></label>
+                                <input type="text" id="first_name" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                            </div>
+                            <div class="form-field">
+                                <label for="last_name" class="block text-sm font-medium text-gray-700 mb-1">Last Name <span class="text-red-600">*</span></label>
+                                <input type="text" id="last_name" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                            </div>
+                            <div class="form-field">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email <span class="text-red-600">*</span></label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                            </div>
+                            <div class="form-field">
+                                <label for="phone_1" class="block text-sm font-medium text-gray-700 mb-1">Phone <span class="text-red-600">*</span></label>
+                                <input type="tel" id="phone_1" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                            </div>
+                            <div class="form-field">
+                                <label for="address_1" class="block text-sm font-medium text-gray-700 mb-1">Street Address <span class="text-red-600">*</span></label>
+                                <input type="text" id="address_1" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                            </div>
+                            <div class="form-field">
+                                <label for="city" class="block text-sm font-medium text-gray-700 mb-1">City <span class="text-red-600">*</span></label>
+                                <input type="text" id="city" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                            </div>
+                            <div class="form-field">
+                                <label for="state" class="block text-sm font-medium text-gray-700 mb-1">State / Province <span class="text-red-600">*</span></label>
+                                <input type="text" id="state" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                            </div>
+                            <div class="form-field">
+                                <label for="postal_code" class="block text-sm font-medium text-gray-700 mb-1">Zip / Postal Code <span class="text-red-600">*</span></label>
+                                <input type="text" id="postal_code" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                            </div>
+                            <label for="agreed_prq" class="block text-sm font-medium text-gray-700 mb-1">Terms <span class="text-red-600">*</span></label>
+                                
+                            <p class="text-xs text-gray-500">
+                                By clicking the 'Submit' button, you provide your electronic signature and represent that you are at least 18 and agree to Our Privacy Policy and Terms and Conditions.
+                            </p>
+                            <p class="text-xs text-gray-500">
+                                By submitting this form, you expressly agree to be contacted by FCAnationaservice.org regarding your inquiry. This consent allows us to reach you by email or telephone (including text messages, autodialed/auto-selected or pre-recorded and articial voice calls and the us of artificial intelligence), even if your number is listed on any state or federal Do Not Call list.
+                            </p>
+                            <p class="text-xs text-gray-500">
+                                You also approve the us of call recording and monitoring of all your inbound and outbound calls with FCAnationalservice.org and its referrals.
+                            </p>
+                            <p class="text-xs text-gray-500">
+                                I understand that my consent is not required as a condition of purchasinng goods or services annd can be revoked at any time.
+                            </p>
+                            <p class="text-xs text-gray-500">
+                                I confirm that accessed, read and understood the pages: Privacy Policy and Terms of Use.
+                            </p>
+                            <div class="form-field flex gap-2 items-center">
+                                <input type="checkbox" id="agreed_prq" required class=" px-4 py-3 rounded-md border border-gray-300 focus:ring-emerald-500 focus:border-emerald-500 transition duration-300">
+                                <label for="agreed_prq" class="block text-sm font-medium text-gray-700 mb-1">I agree </label>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full px-6 py-4 rounded-md text-white bg-emerald-500 hover:bg-emerald-600 text-lg font-semibold transition duration-300 transform hover:scale-105">
+                                    Start your free case review
+                                </button>
+                            </div>
+                            <!-- TrustedForm -->
+                            <script type="text/javascript">
+                            (function() {
+                                var tf = document.createElement('script');
+                                tf.type = 'text/javascript';
+                                tf.async = true;
+                                tf.src = ("https:" == document.location.protocol ? 'https' : 'http') +
+                                '://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&use_tagged_consent=true&l=' +
+                                new Date().getTime() + Math.random();
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+                            })();
+                            </script>
+                            <noscript>
+                            <img src='https://api.trustedform.com/ns.gif' />
+                            </noscript>
+                            <!-- End TrustedForm -->
+                        </form>
                 </div>
             </div>
         </div>

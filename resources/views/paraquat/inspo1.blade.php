@@ -190,8 +190,7 @@
                     <div class="relative">
                         <img src="http://static.photos/medical/1024x576/1" class="rounded-lg shadow-xl w-full">
                         <div class="absolute -bottom-4 -right-4 bg-orange-500 text-white p-4 rounded-lg shadow-lg max-w-xs">
-                            <p class="font-semibold">Free Case Evaluation</p>
-                            <p class="text-sm">No fees unless you win</p>
+                            <p class="font-semibold">Evaluate your case now!</p>
                         </div>
                     </div>
                 </div>
@@ -310,58 +309,84 @@
                 <div class="md:w-1/2 fade-in">
                     <div id="check-eligibility" class="bg-white p-8 rounded-lg shadow-lg">
                         <h3 class="text-2xl font-bold mb-6 text-center">Check Your Eligibility</h3>
-                        <form class="space-y-4" id="eligibilityForm">
+                        <form method="post" class="space-y-4" id="eligibilityForm">
+                            @csrf
+                            
                             <div class="form-field">
-                                <label for="first_name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                                <input type="text" id="first_name" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                                <label for="first_name" class="block text-sm font-medium text-gray-700 mb-1">First Name <span class="text-red-600">*</span></label>
+                                <input type="text" id="first_name" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
                             </div>
                             <div class="form-field">
-                                <label for="last_name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                                <input type="text" id="last_name" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                                <label for="last_name" class="block text-sm font-medium text-gray-700 mb-1">Last Name <span class="text-red-600">*</span></label>
+                                <input type="text" id="last_name" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
                             </div>
                             <div class="form-field">
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email <span class="text-red-600">*</span></label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
                             </div>
                             <div class="form-field">
-                                <label for="phone_1" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                                <input type="tel" id="phone_1" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                                <label for="phone_1" class="block text-sm font-medium text-gray-700 mb-1">Phone <span class="text-red-600">*</span></label>
+                                <input type="tel" id="phone_1" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
                             </div>
                             <div class="form-field">
-                                <label for="exposure" class="block text-sm font-medium text-gray-700 mb-1">How were you exposed to Paraquat?</label>
-                                <select id="exposure" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                                <label for="exposed_loved_one_prq" class="block text-sm font-medium text-gray-700 mb-1">Were you or a loved one exposed to Paraquat? <span class="text-red-600">*</span></label>
+                                <select id="exposed_loved_one_prq" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
                                     <option value="">Select an option</option>
-                                    <option value="agricultural">Agricultural work</option>
-                                    <option value="manufacturing">Manufacturing or handling</option>
-                                    <option value="residential">Residential exposure</option>
-                                    <option value="other">Other</option>
+                                    <option value="my-self">My Self</option>
+                                    <option value="loved-one">Loved One</option>
                                 </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="parkinson_diagnosed_prq" class="block text-sm font-medium text-gray-700 mb-1">Have Parkinson's diagnosis? <span class="text-red-600">*</span></label>
+                                <select id="parkinson_diagnosed_prq" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                                    <option value="">Select an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <label for="agreed_prq" class="block text-sm font-medium text-gray-700 mb-1">Terms <span class="text-red-600">*</span></label>
+                                
+                            <p class="text-xs text-gray-500">
+                                By clicking the 'Submit' button, you provide your electronic signature and represent that you are at least 18 and agree to Our Privacy Policy and Terms and Conditions.
+                            </p>
+                            <p class="text-xs text-gray-500">
+                                By submitting this form, you expressly agree to be contacted by FCAnationaservice.org regarding your inquiry. This consent allows us to reach you by email or telephone (including text messages, autodialed/auto-selected or pre-recorded and articial voice calls and the us of artificial intelligence), even if your number is listed on any state or federal Do Not Call list.
+                            </p>
+                            <p class="text-xs text-gray-500">
+                                You also approve the us of call recording and monitoring of all your inbound and outbound calls with FCAnationalservice.org and its referrals.
+                            </p>
+                            <p class="text-xs text-gray-500">
+                                I understand that my consent is not required as a condition of purchasinng goods or services annd can be revoked at any time.
+                            </p>
+                            <p class="text-xs text-gray-500">
+                                I confirm that accessed, read and understood the pages: Privacy Policy and Terms of Use.
+                            </p>
+                            <div class="form-field flex gap-2 items-center">
+                                <input type="checkbox" id="agreed_prq" required class=" px-4 py-3 rounded-md border border-gray-300 focus:ring-orange-500 focus:border-orange-500 transition duration-300">
+                                <label for="agreed_prq" class="block text-sm font-medium text-gray-700 mb-1">I agree </label>
                             </div>
                             <div>
                                 <button type="submit" class="w-full px-6 py-4 rounded-md text-white bg-orange-500 hover:bg-orange-600 text-lg font-semibold transition duration-300 transform hover:scale-105">
                                     Check Eligibility Now
                                 </button>
                             </div>
-                            <p class="text-xs text-gray-500 text-center">
-                                By submitting, you agree to our Terms and Privacy Policy.
-                            </p>
+                            <!-- TrustedForm -->
+                            <script type="text/javascript">
+                            (function() {
+                                var tf = document.createElement('script');
+                                tf.type = 'text/javascript';
+                                tf.async = true;
+                                tf.src = ("https:" == document.location.protocol ? 'https' : 'http') +
+                                '://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&use_tagged_consent=true&l=' +
+                                new Date().getTime() + Math.random();
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+                            })();
+                            </script>
+                            <noscript>
+                            <img src='https://api.trustedform.com/ns.gif' />
+                            </noscript>
+                            <!-- End TrustedForm -->
                         </form>
-                        <!-- TrustedForm -->
-                        <script type="text/javascript">
-                        (function() {
-                            var tf = document.createElement('script');
-                            tf.type = 'text/javascript';
-                            tf.async = true;
-                            tf.src = ("https:" == document.location.protocol ? 'https' : 'http') +
-                            '://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&use_tagged_consent=true&l=' +
-                            new Date().getTime() + Math.random();
-                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
-                        })();
-                        </script>
-                        <noscript>
-                        <img src='https://api.trustedform.com/ns.gif' />
-                        </noscript>
-                        <!-- End TrustedForm -->
                     </div>
                 </div>
             </div>
