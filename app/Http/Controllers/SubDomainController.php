@@ -26,4 +26,9 @@ class SubDomainController extends Controller
     {
         return view('roundup.inspo1');
     }
+
+    public function rideshareIndex()
+    {
+        return view('rideshare.landing');
+    }
 }

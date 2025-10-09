@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::domain('rideshareclaims.fcanationalservice.org')->group(function() {
+    Route::get('/', [SubDomainController::class, 'rideshareIndex'])->name('rideshare.index');
+});
 
 Route::domain('paraquatintakeform.fcanationalservice.org')->group(function() {
     Route::get('/', [SubDomainController::class, 'paraquatIndex'])->name('paraquat.index');
