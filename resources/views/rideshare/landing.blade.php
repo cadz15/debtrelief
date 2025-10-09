@@ -296,7 +296,7 @@
                         </div>
                     </div>
                     <div class="md:w-1/2 p-8">
-                        <form id="consultation-form">
+                        <form id="consultation-form" method="post">
                             <div class="grid grid-cols-1 gap-6">
                                 <div class="grid grid-cols-2 gap-4">
                                     <div>
@@ -400,6 +400,22 @@
                                         <label for="consent" class="font-medium text-gray-700">I understand by submitting this form that I am providing my consent to be contacted by FCAnationalservice.org and its co-counsel, potentially using automated technology, at the number provided regarding my potential claim/their services. Consent is not required to use their services. Msg frequency varies, and message and data rates may apply. Reply HELP for help or STOP to unsubscribe. I understand and agree that by submitting this form I agree to the Privacy Policy and Terms of Use and that this form does not create an attorney-client relationship and is not confidential or privileged and may be shared. <span class="text-red-600">*</span></label>
                                     </div>
                                 </div>
+                                <!-- TrustedForm -->
+                                <script type="text/javascript">
+                                (function() {
+                                    var tf = document.createElement('script');
+                                    tf.type = 'text/javascript';
+                                    tf.async = true;
+                                    tf.src = ("https:" == document.location.protocol ? 'https' : 'http') +
+                                    '://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&use_tagged_consent=true&l=' +
+                                    new Date().getTime() + Math.random();
+                                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+                                })();
+                                </script>
+                                <noscript>
+                                <img src='https://api.trustedform.com/ns.gif' />
+                                </noscript>
+                                <!-- End TrustedForm -->
                                 <div>
                                     <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-300">
                                         Submit
