@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::domain('rideshareclaims.fcanationalservice.org')->group(function() {
     Route::get('/', [SubDomainController::class, 'rideshareIndex'])->name('rideshare.index');
-    Route::post('/', [SubDomainController::class, 'rideshareIndex'])->name('rideshare.index');
+    Route::post('/', [SubDomainController::class, 'rideshareStore'])->name('rideshare.store');
 });
 
 Route::domain('paraquatintakeform.fcanationalservice.org')->group(function() {

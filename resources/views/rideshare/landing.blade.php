@@ -297,28 +297,41 @@
                     </div>
                     <div class="md:w-1/2 p-8">
                         <form id="consultation-form" method="post">
+                            @csrf
                             <div class="grid grid-cols-1 gap-6">
                                 <div class="grid grid-cols-2 gap-4">
                                     <div>
-                                        <label for="first-name" class="block text-sm font-medium text-gray-700">First Name <span class="text-red-600">*</span></label>
-                                        <input required type="text" id="first-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                        <label for="first_name" class="block text-sm font-medium text-gray-700">First Name <span class="text-red-600">*</span></label>
+                                        <input required type="text" id="first_name" value="{{ old('first_name')}}" name="first_name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                        @error('first_name')
+                                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div>
-                                        <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name <span class="text-red-600">*</span></label>
-                                        <input required type="text" id="last-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                        <label for="last_name" class="block text-sm font-medium text-gray-700">Last Name <span class="text-red-600">*</span></label>
+                                        <input required type="text" id="last_name" name="last_name" value="{{ old('last_name')}}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                        @error('last_name')
+                                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div>
                                     <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number <span class="text-red-600">*</span></label>
-                                    <input required type="tel" id="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                    <input required type="tel" id="phone" name="phone" value="{{ old('phone')}}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                    @error('phone')
+                                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div>
                                     <label for="email" class="block text-sm font-medium text-gray-700">Email <span class="text-red-600">*</span></label>
-                                    <input required type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                    <input required type="email" id="email" name="email" value="{{ old('email')}}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                    @error('email')
+                                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div>
                                     <label for="incident" class="block text-sm font-medium text-gray-700">Did you or a loved one experience assault while in a rideshare (Uber, Lyft, etc)? <span class="text-red-600">*</span></label>
-                                    <select required id="incident" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                    <select required id="incident" name="incident" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
                                         <option>Select an option</option>
                                         <option>Yes</option>
                                         <option>No</option>
@@ -326,7 +339,7 @@
                                 </div>
                                 <div>
                                     <label for="receipt" class="block text-sm font-medium text-gray-700">Do you have the receipt from the App? <span class="text-red-600">*</span></label>
-                                    <select required id="receipt" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                    <select required id="receipt" name="receipt" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
                                         <option>Select an option</option>
                                         <option>Yes</option>
                                         <option>No</option>
@@ -334,11 +347,14 @@
                                 </div>
                                 <div>
                                     <label for="date" class="block text-sm font-medium text-gray-700">When did the incident occur? <span class="text-red-600">*</span></label>
-                                    <input required type="date" id="date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                    <input required type="date" name="date" id="date" value="{{ old('date')}}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                    @error('date')
+                                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div>
                                     <label for="state" class="block text-sm font-medium text-gray-700">In what state did the abuse occur? <span class="text-red-600">*</span></label>
-                                    <select required id="state" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                    <select required id="state" name="state" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
                                         <option>Select a state</option>
                                         <option>Alabama</option>
                                         <option>Alaska</option>
@@ -394,7 +410,7 @@
                                 </div>
                                 <div class="flex items-start">
                                     <div class="flex items-center h-5">
-                                        <input required id="consent" name="consent" type="checkbox" class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded">
+                                        <input required id="consent" name="consent"  type="checkbox" class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded">
                                     </div>
                                     <div class="ml-3 text-sm">
                                         <label for="consent" class="font-medium text-gray-700">I understand by submitting this form that I am providing my consent to be contacted by FCAnationalservice.org and its co-counsel, potentially using automated technology, at the number provided regarding my potential claim/their services. Consent is not required to use their services. Msg frequency varies, and message and data rates may apply. Reply HELP for help or STOP to unsubscribe. I understand and agree that by submitting this form I agree to the Privacy Policy and Terms of Use and that this form does not create an attorney-client relationship and is not confidential or privileged and may be shared. <span class="text-red-600">*</span></label>
