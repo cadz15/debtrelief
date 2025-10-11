@@ -347,7 +347,7 @@
                                 </div>
                                 <div>
                                     <label for="date" class="block text-sm font-medium text-gray-700">When did the incident occur? <span class="text-red-600">*</span></label>
-                                    <input required type="date" name="date" id="date" value="{{ old('date')}}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
+                                    <input required type="date" name="date" id="date" onfocus="this.showPicker && this.showPicker()" value="{{ old('date')}}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 p-2 border">
                                     @error('date')
                                         <span class="text-red-500 text-sm">{{ $message }}</span>
                                     @enderror
@@ -410,7 +410,7 @@
                                 </div>
                                 <div class="flex items-start">
                                     <div class="flex items-center h-5">
-                                        <input required id="consent" name="consent"  type="checkbox" class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded">
+                                        <input required id="consent" value="yes" name="consent"  type="checkbox" class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded">
                                     </div>
                                     <div class="ml-3 text-sm">
                                         <label for="consent" class="font-medium text-gray-700">I understand by submitting this form that I am providing my consent to be contacted by FCAnationalservice.org and its co-counsel, potentially using automated technology, at the number provided regarding my potential claim/their services. Consent is not required to use their services. Msg frequency varies, and message and data rates may apply. Reply HELP for help or STOP to unsubscribe. I understand and agree that by submitting this form I agree to the Privacy Policy and Terms of Use and that this form does not create an attorney-client relationship and is not confidential or privileged and may be shared. <span class="text-red-600">*</span></label>
@@ -486,6 +486,29 @@
             </div>
         </div>
     </footer>
+
+    @if(session('success') || session('error'))
+        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6">
+                <div class="text-lg font-semibold mb-4 {{ session('success') ? 'text-green-600' : 'text-red-600' }}">
+                    {{ session('success') ? 'Submission Successful' : 'Submission Error' }}
+                </div>
+                <div class="text-gray-700">
+                    @if(session('success'))
+                        Success in submitting your case. Please wait for review. We will contact you shortly.
+                    @elseif(session('error'))
+                        Error in submitting, please try again.
+                    @endif
+                </div>
+                <div class="mt-6 text-right">
+                    <a href="{{ route('rideshare.landing') }}"
+                    class="inline-block bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded">
+                        Close
+                    </a>
+                </div>
+            </div>
+        </div>
+    @endif
 
     <script>
         // Mobile menu toggle
