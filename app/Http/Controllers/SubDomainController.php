@@ -88,17 +88,17 @@ class SubDomainController extends Controller
             // Check if the request was successfule
             if ($responses->successful()) {
                 // You can log the response or do further processing
-                return redirect()->route('rideshare.landing')->with('success', 'Your submission has been received.');
+                return redirect()->route('rideshare.index')->with('success', 'Your submission has been received.');
             } else {
                 // Handle the error case
-                return redirect()->route('rideshare.landing')->with('error', 'Error in submitting!.');
+                return redirect()->route('rideshare.index')->with('error', 'Error in submitting!.');
             }
             
         }catch(Exception $e) {
 
            
         }
-
-        return view('rideshare.landing');
+        
+        return view('rideshare.index');
     }
 }

@@ -486,14 +486,18 @@
             </div>
         </div>
     </footer>
-
     @if(session('success') || session('error'))
-        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6">
-                <div class="text-lg font-semibold mb-4 {{ session('success') ? 'text-green-600' : 'text-red-600' }}">
-                    {{ session('success') ? 'Submission Successful' : 'Submission Error' }}
+        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4 py-6" 
+            style="animation: modal 0.3s ease-out forwards;">
+            <div class="bg-white rounded-xl shadow-xl max-w-lg w-full p-8 transform scale-95 opacity-0" 
+                style="animation: modal 0.3s ease-out forwards;">
+                <div class="flex items-center {{ session('success') ? 'text-green-500' : 'text-red-500' }} mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path d="{{ session('success') ? 'M12 8l4 4m0 0l4-4m-4 4l-4 4m4-4H8' : 'M12 4v16M4 12h16' }}"/>
+                    </svg>
+                    <span class="text-xl font-semibold">{{ session('success') ? 'Submission Successful' : 'Submission Error' }}</span>
                 </div>
-                <div class="text-gray-700">
+                <div class="text-gray-700 mb-6">
                     @if(session('success'))
                         Success in submitting your case. Please wait for review. We will contact you shortly.
                     @elseif(session('error'))
@@ -501,14 +505,27 @@
                     @endif
                 </div>
                 <div class="mt-6 text-right">
-                    <a href="{{ route('rideshare.landing') }}"
-                    class="inline-block bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded">
+                    <a href="{{ route('rideshare.index') }}" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-105">
                         Close
                     </a>
                 </div>
             </div>
         </div>
     @endif
+
+    <style>
+        @keyframes modal {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+
 
     <script>
         // Mobile menu toggle
